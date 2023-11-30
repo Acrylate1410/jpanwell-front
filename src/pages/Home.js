@@ -7,18 +7,26 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
 import { Product } from './Product';
- 
+function ImageEffect() {
+  const [isHover, setHover] = useState(false)
+  return (
+      <div className='mt-32 overflow-y-hidden w-full' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        {!isHover ? <img className='w-full' src="banner.png"></img>:<img className='w-full scale-[0.8]' src="nmn.png"></img>}
+      </div> 
+  )
+}
 export function Home() {
     return (
         <div className="relative">
-          <div className='mt-40 overflow-y-hidden'>
-              <img className='w-full' src="natural-beauty-podium-backdrop-with-spring-rose-flower-field-scene.jpg"></img>
+          <ImageEffect/>
+          <div className='mt-8 md:mt-12 overflow-y-hidden'>
+              <img className='' src="banner2.png"></img>
           </div>
-          <section className='w-full scroll-m-20  mt-8'>
+          <section className='w-full scroll-m-20  mt-6 '>
             <div className='flex justify-center items-center mx-4 md:mx-44'>
-                    <div className='h-1 flex-1 border-b-[1.5px] border-gray-500'></div>
+                    <div className='h-1 flex-1 border-b border-yellow-950'></div>
                     <h2 className='font-semibold text-xl md:text-3xl text-center my-8 mx-4  text-yellow-950'>Sản phẩm yêu thích</h2>
-                    <div className='h-1 flex-1 border-b-[1.5px] border-gray-500'></div>
+                    <div className='h-1 flex-1 border-b border-yellow-950'></div>
                 </div>
             <div className='md:flex md:justify-between md:items-center mx-8 flex-wrap'>
               <ProductTN/>
@@ -27,9 +35,9 @@ export function Home() {
           </section>
           <section className='w-full scroll-m-20  mt-8'>
               <div className='flex justify-center items-center mx-4 md:mx-44'>
-                  <div className='h-1 flex-1 border-b-[1.5px] border-gray-500'></div>
+                  <div className='h-1 flex-1 border-b border-yellow-950'></div>
                   <h2 className='font-semibold text-xl md:text-3xl text-center my-8 mx-4  text-yellow-950'>Tin tức</h2>
-                  <div className='h-1 flex-1 border-b-[1.5px] border-gray-500'></div>
+                  <div className='h-1 flex-1 border-b border-yellow-950'></div>
               </div>
               <ArticleSwiper/>
               <Link to="/tin-tuc" className='block w-fit mx-auto'>
@@ -68,7 +76,11 @@ function ProductSwiper() {
             slidesPerView: 3,
           },
         }} spaceBetween={30} navigation={true} modules={[Navigation]} className='products md:!w-2/3 !w-full'>
-            {products.map(i => <SwiperSlide><Product src={i.thumbnail} name={i.name} isLiked={i.isLiked} link={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")}/></SwiperSlide>)}
+            {products.map(i => 
+              <SwiperSlide>
+                <Product src={i.thumbnail} name={i.name} isLiked={i.isLiked} link={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")}/>
+              </SwiperSlide>
+            )}
       </Swiper>
     )
 }

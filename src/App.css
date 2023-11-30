@@ -56,3 +56,7 @@
   height: 3px !important;
   border-radius: 0 !important;
 }
+
+canvas {
+  z-index: 1000;
+}

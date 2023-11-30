@@ -15,7 +15,7 @@ export default function Footer() {
                         <p className="font-semibold">Công ty Cổ phần Hiroki</p>
                         <p className="text-sm">Địa chỉ: Số 58 Kim Mã, P. Kim Mã, Q. Ba Đình, TP. Hà Nội</p>
                         <p className="font-semibold mt-4">HỖ TRỢ KHÁCH HÀNG</p>
-                        <p className="text-sm mt-1">• Chính sách đổi trả</p>
+                        <Link to="/chinh-sach-doi-tra" className="text-sm mt-1">• Chính sách đổi trả</Link>
                         <p className="text-sm mt-1">• FAQ</p>
                     </div>
                     <div className="flex items-center mr-12">

@@ -10,6 +10,7 @@ import { ProductDetails } from './pages/ProductDetails';
 import { Products } from './pages/Products';
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
+import { Return } from './pages/Return';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="lien-he" element={<Contact />} />
             <Route path="ve-chung-toi" element={<About />} />
             <Route path="article" element={<Article/>}/>
+            <Route path="chinh-sach-doi-tra" element={<Return/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>

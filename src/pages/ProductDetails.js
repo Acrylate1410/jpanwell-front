@@ -71,10 +71,10 @@ export function ProductDetails() {
           </div>
           <div className="mx-8">
             <Link to="m.me/1436968196580581" onClick={() => send(product.link)} className='md:hidden w-full mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] transition text-white mb-4 flex items-center justify-center'>
-                    <PiShoppingCartSimpleThin className="text-lg"/>
-                    <div className="mx-1"></div>
-                    <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
-                  </Link>
+              <PiShoppingCartSimpleThin className="text-lg"/>
+              <div className="mx-1"></div>
+              <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
+            </Link>
           </div>
           <div className="w-4/5 mx-auto mt-4  md:hidden ">
               <div className="border-b border-black mx-auto flex justify-between py-2">

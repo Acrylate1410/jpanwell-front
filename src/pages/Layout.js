@@ -8,10 +8,12 @@ import { Nav } from "./Nav";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import { PiCertificateFill } from "react-icons/pi";
+import Snowfall from 'react-snowfall'
 import Hamburger from "hamburger-react";
 
 
 const Layout = () => {
+  const mode = "xmas"
   const outerRef = useRef()
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -70,11 +72,18 @@ const Layout = () => {
     }, [])
     return (
         <div className="App w-full overflow-hidden relative">
+            {mode === "xmas" &&<Snowfall/>}
             <header className='header pt-4 pb-1 md:pb-0 md:pt-4 bg-white fixed top-0 right-0 left-0 z-30'>
             <div className='flex items-center justify-between'>
-              <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'  >
+              <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>
                 <img alt="JpanWell" src="JpanwellVSKCĐ.png" className='object-contain'></img>
               </Link>
+              {mode === "xmas" &&
+              <>
+                <img src="Untitled-3.png" className="absolute bottom-10 md:bottom-4 left-4 md:left-12 w-5 md:w-8"></img>
+                <img src="ư.png" className="absolute left-[45%] top-0 w-8 md:w-14"></img>
+                <img src="1.png" className="absolute left-[35%] top-0 w-6"></img>
+              </>}
               <div className='flex w-[45%] justify-end mr-4 md:mr-12'>
               <div className='w-1/2 relative hidden md:block'  ref={outerRef}>
                 <div className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></div>
@@ -103,7 +112,7 @@ const Layout = () => {
             
             <Nav/>
           </header>
-            <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-yellow-950 hover:border-white '}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
+            <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0]'}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
             <Outlet />
             <section className='flex justify-center items-start bg-[#d9cbb0]'>
                 <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center'>

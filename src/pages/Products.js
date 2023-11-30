@@ -18,9 +18,23 @@ export function Products() {
         setProducts(data || [])
       }).catch(error => {})
     }, []);
+    const changeOrder = (e) => {
+        if (e === "Tên sản phẩm từ A-Z") {
+          setSort("Tên sản phẩm từ A-Z")
+          setFilter("")
+        } else if (e === "Tên sản phẩm từ Z-A") {
+          setSort("Tên sản phẩm từ Z-A")
+          setFilter("")
+        } else if (e === "Sản phẩm yêu thích"){
+          setSort("Tên sản phẩm từ A-Z")
+          setFilter("Yêu thích")
+        }
+    }
     return (
         <>
-          <div className='md:flex mt-[120px] md:mt-40 '>
+          <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className='font-semibold'>Danh mục sản phẩm</span></div>
+          <div className='md:flex mt-4'>
+            
             <div className='md:w-1/5 md:ml-24'>
               {[{text: "Sức khỏe", link: "suc-khoe"}, {text: "Làm đẹp", link: "lam-dep"}].map(i =>
                   <>
@@ -39,13 +53,15 @@ export function Products() {
                 )}
             </div>
             <div className='mx-8 md:w-4/5 mt-4 md:mt-0'>
-              <div className="md:ml-4">
-                <div className='flex items-center justify-end md:justify-start'>
-                  <label for="orders" className='text-sm font-semibold'>Sắp xếp theo</label>
+              <div className="md:mr-4">
+                <div className='flex items-center justify-end'>
+                  <label for="orders" className='text-sm font-semibold text-yellow-950'>Sắp xếp theo</label>
                   <div className='mx-1'></div>
-                  <select name="orders" id="orders" className='border py-1 rounded-2xl border-gray-500 text-xs flex justify-between items-center outline-0'>
-                    <option value="asc">Tên sản phẩm từ A-Z</option>
-                    <option value="desc">Tên sản phẩm từ Z-A</option>
+                  
+                  <select onChange={(e) => {changeOrder(e.target.value)}} name="orders" id="orders" className='border py-1 border-gray-500 text-xs flex justify-between items-center outline-0 px-1'>
+                    <option>Tên sản phẩm từ A-Z</option>
+                    <option>Tên sản phẩm từ Z-A</option>
+                    <option>Sản phẩm yêu thích</option>
                   </select>
                 </div>
             </div>
@@ -53,8 +69,24 @@ export function Products() {
                 {products.filter(el => {
                   if (filter === '') {
                     return true
+                  } else if (filter === 'Yêu thích') {
+                    return el.isLiked
                   }
                   return el.category === filter;
+                }).sort((a, b) => {
+                  if (sort === "Tên sản phẩm từ A-Z") {
+                    if (a.name > b.name) {
+                      return 1
+                    } else {
+                      return -1
+                    }
+                  } else if (sort === "Tên sản phẩm từ Z-A") {
+                    if (a.name > b.name) {
+                      return -1
+                    } else {
+                      return 1
+                    }
+                  }
                 }).map(i => <Product src={i.thumbnail} name={i.name} isLiked={i.isLiked} link={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")}/>)}
             </div>
           </div>

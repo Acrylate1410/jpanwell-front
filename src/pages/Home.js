@@ -11,8 +11,8 @@ import { Product } from './Product';
 export function Home() {
     return (
         <div className="relative">
-          <div className='mt-32 overflow-y-hidden'>
-              <img className='w-3/5' src="natural-beauty-podium-backdrop-with-spring-rose-flower-field-scene.jpg"></img>
+          <div className='mt-40 overflow-y-hidden'>
+              <img className='w-full' src="natural-beauty-podium-backdrop-with-spring-rose-flower-field-scene.jpg"></img>
           </div>
           <section className='w-full scroll-m-20  mt-8'>
             <div className='flex justify-center items-center mx-4 md:mx-44'>

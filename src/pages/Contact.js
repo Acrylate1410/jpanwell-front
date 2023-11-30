@@ -30,7 +30,9 @@ export function Contact() {
           )
     }
     return (
-        <div className="mt-44 mb-12 md:flex justify-between md:mx-48 items-center text-justify">
+        <>
+        <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className="font-semibold">Liên hệ</span></div>
+        <div className="mb-12 md:flex justify-between md:mx-48 items-center text-justify mt-8">
             <div className="md:w-[46%] md:mb-16 mb-8 md:ml-16 mx-8 md:mr-0">
                 <p className="font-semibold text-lg">THÔNG TIN LIÊN HỆ</p>
                 <p>Khách hàng có nhu cầu liên lạc, trao đổi, đóng góp ý kiến, <br className="hidden"></br>vui lòng liên hệ theo:</p>
@@ -61,5 +63,6 @@ export function Contact() {
                 <div className="w-full justify-center flex items-center"><button onClick={() => send()} className="border border-gray-500 py-1 px-3 font-semibold mx-auto mt-4 uppercase bg-yellow-950 text-white hover:scale-105 transition text-sm">Gửi tin nhắn</button></div>
             </div>
         </div>
+        </>
     )
 }

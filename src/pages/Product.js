@@ -33,11 +33,11 @@ export function Product(props) {
           </div>
           <div className='font-semibold mt-2 h-9 md:h-6 text-sm md:text-base'>{props.name}<span></span></div>
           <div className="mb-2 md:mt-1 text-xs md:text-sm">Thực phẩm bảo vệ sức khỏe</div>
-          <button className='w-fit py-2 px-2 md:px-4 border border-gray-500 hover:border-white hover:bg-yellow-950 transition hover:text-white mb-4 rounded-lg flex items-center justify-center mx-auto' onClick={() => send(props.link)}>
+          <Link to="m.me/1436968196580581" className='w-fit py-2 px-2 md:px-4 bg-[#d9cbb0] text-yellow-900 hover:text-white transition font-semibold mb-4 rounded-lg flex items-center justify-center mx-auto' onClick={() => send(props.link)}>
             <PiShoppingCartSimpleThin className="text-lg"/>
             <div className="mx-1"></div>
             <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
-          </button>
+          </Link>
       </Link>
       // click để gửi link qua messenger
     )

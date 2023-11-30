@@ -42,11 +42,14 @@ export function ProductDetails() {
 
     return (
       <>
-          <div className="flex flex-col md:flex-row mt-40 justify-center">
+          <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span><Link to="/danh-muc-san-pham">Danh mục sản phẩm</Link></span><span className='mx-2'>|</span><span className="font-semibold">{product.name}</span></div>
+          <div className="flex flex-col md:flex-row md:mt-8 justify-center">
             <div className="md:w-1/3 order-3 md:order-1">
               <SwiperComponent  slide1={product.slide1} slide2={product.slide2}/>
             </div>
+            
             <div className="mx-8 order-2"></div>
+            
             <div className=" md:w-1/3 mt-4 md:mt-8  md:order-3 order-1">
               <p className="text-sm md:mb-2 text-center md:text-start">Thực phẩm bảo vệ sức khỏe</p>
               <p className="text-2xl font-semibold md:border-b border-black w-3/5 pb-2 text-center md:text-start mx-auto md:mx-0">{product.name}</p>
@@ -58,22 +61,34 @@ export function ProductDetails() {
                         </div>
                         )
                 }
-                <button onClick={() => send(product.link)} className='w-fit mt-6 py-2 px-2 md:px-4 border border-gray-500 hover:border-white hover:bg-yellow-950 transition hover:text-white mb-4 rounded-lg flex items-center justify-center'>
+                <Link to="m.me/1436968196580581" onClick={() => send(product.link)} className='w-fit mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] text-yellow-900 font-semibold transition hover:text-white mb-4 rounded-lg flex items-center justify-center'>
                   <PiShoppingCartSimpleThin className="text-lg"/>
                   <div className="mx-1"></div>
                   <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
-          <div className="w-4/5 mx-auto mt-8  md:hidden ">
-              {product.function && product.function.map(i =>
-                    <div className="flex items-start mb-2">
-                      <div className="w-[3%]"><GiCheckMark className="text-sm mt-1 md:mt-2"/></div>
-                      <span className="ml-2">{i}</span>
-                    </div>
-                )
-              }
+          <div className="mx-8">
+            <Link to="m.me/1436968196580581" onClick={() => send(product.link)} className='md:hidden w-full mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] transition text-white mb-4 flex items-center justify-center'>
+                    <PiShoppingCartSimpleThin className="text-lg"/>
+                    <div className="mx-1"></div>
+                    <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
+                  </Link>
+          </div>
+          <div className="w-4/5 mx-auto mt-4  md:hidden ">
+              <div className="border-b border-black mx-auto flex justify-between py-2">
+                  <div className="font-semibold uppercase">Công dụng của sản phẩm</div>
+                </div>
+                <div className="mt-2">
+                  {product.function && product.function.map(i =>
+                        <div className="flex items-start mb-2">
+                          <div className="w-[3%]"><GiCheckMark className="text-sm mt-1 md:mt-2"/></div>
+                          <span className="ml-2">{i}</span>
+                        </div>
+                    )
+                  }
+              </div>
               </div>
           <div className="w-4/5 mx-auto mt-4 mb-8 text-justify">
             <div className="border-b border-black mx-auto flex justify-between py-2">
@@ -155,7 +170,7 @@ export function ProductDetails() {
 
 
 
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper  w-full aspect-square  shadow-[0_10px_10px_-10px_rgba(0,0,0,0.3)] border border-gray-300 md:!hidden">
+      <Swiper pagination={true} modules={[Pagination]} className="mySwiper  w-full aspect-square  shadow-[0_10px_10px_-10px_rgba(0,0,0,0.3)] md:!hidden">
         <SwiperSlide className="w-full !flex items-center justify-center h-full">
           <img src={"slides2/" + props.slide1} className="h-[75%]"/>
         </SwiperSlide>

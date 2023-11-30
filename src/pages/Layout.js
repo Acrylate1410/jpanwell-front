@@ -49,7 +49,7 @@ const Layout = () => {
                   {text: "Tin tức", link: "/tin-tuc"},
                   {text: "Liên hệ", link: "/lien-he"}].map(i => 
                     <Link reloadDocument to={i.link} key={i.text}>
-                        <div className='cursor-pointer text-yellow-950 border-b border-gray-500 pl-6 py-3 text-[#093489] font-medium ' onClick={() => {setOpen(false)}}>{i.text}</div>
+                        <div className='cursor-pointer text-yellow-950 border-b border-gray-300 pl-6 py-3 text-[#093489] font-medium ' onClick={() => {setOpen(false)}}>{i.text}</div>
                     </Link>
                 )}
             </div>
@@ -105,17 +105,17 @@ const Layout = () => {
           </header>
             <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-yellow-950 hover:border-white '}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
             <Outlet />
-            <section className='flex justify-center items-start bg-yellow-950'>
-                <div className='flex flex-col items-center py-2 text-white w-1/4 text-center'>
-                  <div className="h-10"><BsBoxSeam className='text-3xl'/></div>
+            <section className='flex justify-center items-start bg-[#d9cbb0]'>
+                <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center'>
+                  <div className="h-10"><BsBoxSeam className='text-4xl'/></div>
                   <p className="text-xs md:text-sm mt-2">Hàng chính hãng 100%</p>
                 </div>
-                <div className='flex flex-col items-center py-2 text-white w-1/4 text-center mx-8'>
-                  <div className="h-10"><FaShippingFast className='text-[33px]'/></div>
+                <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center mx-8'>
+                  <div className="h-10"><FaShippingFast className='text-4xl'/></div>
                   <p className="text-xs md:text-sm mt-2">Miễn phí giao hàng <br className="md:hidden"></br>toàn quốc</p>
                 </div>
-                <div className='flex flex-col items-center py-2 text-white w-1/4 text-center'>
-                  <div className="h-10"><PiCertificateFill className='text-3xl'/></div>
+                <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center'>
+                  <div className="h-10"><PiCertificateFill className='text-4xl'/></div>
                   <p className="text-xs md:text-sm mt-2">Đảm bảo nguồn gốc, chất lượng sản phẩm <br className="hidden md:block"></br> và nguyên liệu đầu vào</p>
                 </div>
           </section>

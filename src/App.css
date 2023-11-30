@@ -1,0 +1,58 @@
+.table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.deco1 {
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
+               2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+}
+
+.deco2 {
+  text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
+               0.25px 0.25px #fff, -0.25px -0.25px #fff, 0.25px -0.25px #fff, -0.25px 0.25px #fff;
+}
+
+.document-container {
+  width: 80% !important;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .document-container {
+    width: 100% !important;
+  }
+}
+
+.document-container > * {
+  width: 100% !important;
+}
+
+.pg-viewer-wrapper {
+  overflow-y: hidden !important;
+}
+
+.pg-viewer-wrapper dd, .pg-viewer-wrapper dir, .pg-viewer-wrapper menu, .pg-viewer-wrapper ol, .pg-viewer-wrapper ul {
+  margin-left: 0 !important;
+  padding-left: 40px !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: black !important;
+}
+
+.products .swiper-button-prev:after, .products .swiper-button-next:after {
+  font-size: 16px !important
+}
+
+.articles .swiper-button-prev:after, .articles .swiper-button-next:after {
+  font-size: 32px !important
+}
+.banners .swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 30px !important;
+  height: 3px !important;
+  border-radius: 0 !important;
+}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function About() {
     return (
         <>
-            <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className="font-semibold">Về JpanWell</span></div>
+            <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Về JpanWell</span></div>
             <div className="mt-8 text-justify mx-8 md:w-1/2 md:mx-auto mb-12">
                 <span className="font-semibold">Về JpanWell </span>
                 <br></br>

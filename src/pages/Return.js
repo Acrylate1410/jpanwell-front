@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Return() {
     return (
         <>
-            <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className="font-semibold">Chính sách đổi trả</span></div>
+            <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Chính sách đổi trả</span></div>
             <div className="mt-8 text-justify mx-8 md:w-1/2 md:mx-auto mb-12">
                 <p className="font-bold text-2xl text-center">Chính sách đổi trả hàng</p>
                 <p className="mt-4">Chúng tôi thành thật xin lỗi nếu sản phẩm hay dịch vụ của chúng tôi làm qúy khách không hài lòng. Tất nhiên, để khắc phục những thiếu sót đó, chúng tôi rất vui vẻ chấp nhận và thực hiện đổi trả hàng miễn phí, hoàn tiền 100% cho quý khách thuộc những trường hợp sau :</p>

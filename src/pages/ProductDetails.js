@@ -42,7 +42,7 @@ export function ProductDetails() {
 
     return (
       <>
-          <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span><Link to="/danh-muc-san-pham">Danh mục sản phẩm</Link></span><span className='mx-2'>|</span><span className="font-semibold">{product.name}</span></div>
+          <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span><Link to="/danh-muc-san-pham">Danh mục sản phẩm</Link></span><span className='mx-1'>|</span><span className="font-semibold">{product.name}</span></div>
           <div className="flex flex-col md:flex-row md:mt-8 justify-center">
             <div className="md:w-1/3 order-3 md:order-1">
               <SwiperComponent  slide1={product.slide1} slide2={product.slide2}/>

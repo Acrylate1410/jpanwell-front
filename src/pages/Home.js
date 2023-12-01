@@ -4,15 +4,27 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import { Navigation } from 'swiper/modules';
+import {  Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Product } from './Product';
 function ImageEffect() {
   const [isHover, setHover] = useState(false)
   return (
-      <div className='mt-32 overflow-y-hidden w-full' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-        {!isHover ? <img className='w-full' src="banner.png"></img>:<img className='w-full scale-[0.8]' src="nmn.png"></img>}
-      </div> 
+
+    <Swiper 
+        slidesPerView={1} autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='mt-32 !w-full'>
+              <SwiperSlide>
+              
+                <img className='w-full' src="banner.png"></img>
+              </SwiperSlide>
+              <SwiperSlide>
+              <img className='w-full scale-[0.8]' src="nmn.png"></img>
+              </SwiperSlide>
+      </Swiper>
+      
   )
 }
 export function Home() {

@@ -29,9 +29,10 @@ export function Contact() {
             }
           )
     }
+    //mt-[120px] md:mt-36 
     return (
         <>
-        <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className="font-semibold">Liên hệ</span></div>
+        <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Liên hệ</span></div>
         <div className="mb-12 md:flex justify-between md:mx-48 items-center text-justify mt-8">
             <div className="md:w-[46%] md:mb-16 mb-8 md:ml-16 mx-8 md:mr-0">
                 <p className="font-semibold text-lg">THÔNG TIN LIÊN HỆ</p>

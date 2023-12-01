@@ -9,7 +9,7 @@ export function News() {
     }, []);
     return (
       <>
-        <div className='mt-[120px] md:mt-36 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-2'>|</span><span className="font-semibold">Tin tức</span></div>
+        <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Tin tức</span></div>
         <div className="mt-8">
             {articleList.map(i =>
               <Link to={i.link ? i.link : "/article?id=" + i._id} className="flex flex-col justify-center items-center md:items-start md:flex-row mb-12 md:mx-32">

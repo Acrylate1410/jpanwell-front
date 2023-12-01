@@ -7,7 +7,8 @@ import { SlArrowUp } from "react-icons/sl";
 import { Nav } from "./Nav";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
-import { PiCertificateFill } from "react-icons/pi";
+import { PiCertificateFill, PiPhoneCallThin } from "react-icons/pi";
+import { FiPhone } from "react-icons/fi";
 import Snowfall from 'react-snowfall'
 import Hamburger from "hamburger-react";
 
@@ -16,7 +17,7 @@ const Layout = () => {
   let textColor = "text-yellow-950"
   let borderColor = "border-gray-500"
     if (window.location.pathname === "/") {
-      textColor = "text-white"
+      textColor = "md:text-white"
       borderColor = "border-white"
     }
   const mode = "xmas"
@@ -79,7 +80,7 @@ const Layout = () => {
     return (
         <div className="App w-full overflow-hidden relative">
             {mode === "xmas" &&<Snowfall/>}
-            <header className={window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
+            <header className={window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 md:bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
             : 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
             <div className='flex items-center justify-between'>
               {window.location.pathname === "/" && <div className="w-[45%]"></div>}
@@ -116,12 +117,13 @@ const Layout = () => {
             <Nav/>
             {
               window.location.pathname === "/" &&
-              <div className="h-[450px] flex items-center justify-center">
-                <img src="wish.png" className="w-2/5 mb-28"></img>
+              <div className="h-0 md:h-[450px] flex items-center justify-center">
+                <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
               </div>
             }
           </header>
             <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0]'}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
+            <button className={pos + ' fixed bottom-[65px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0] md:hidden'}><FiPhone className="text-xl"/></button>
             <Outlet />
             <section className='flex justify-center items-start bg-[#d9cbb0]'>
                 <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center'>
@@ -169,7 +171,7 @@ function VSearchBar() {
     <>
             <div className='w-full relative md:hidden mt-4' ref={outerRef}>
             <div className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></div>
-            <input className='border border-gray-300 py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+            <input className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
             <div className={query === "" ? "hidden" 
                   : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300"}>
                     {products.filter(el => {

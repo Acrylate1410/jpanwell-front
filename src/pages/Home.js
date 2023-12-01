@@ -15,13 +15,13 @@ function ImageEffect() {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='mt-32 !w-full'>
+        spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full'>
               <SwiperSlide>
               
-                <img className='w-full' src="banner.png"></img>
+                <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png"></img>
               </SwiperSlide>
-              <SwiperSlide>
-              <img className='w-full scale-[0.8]' src="nmn.png"></img>
+              <SwiperSlide className='!flex items-center'>
+              <img className='w-full md:scale-100 scale-105  ' src="nmn.png"></img>
               </SwiperSlide>
       </Swiper>
       
@@ -30,9 +30,13 @@ function ImageEffect() {
 export function Home() {
     return (
         <div className="relative">
+          <div className='md:hidden'>
+            <img className='scale-110 mt-3' src="bannerchristmas.png"></img>
+            <img className='top-32' src="628.png"/>
+          </div>
           <ImageEffect/>
           <div className='mt-8 md:mt-12 overflow-y-hidden'>
-              <img className='' src="banner2.png"></img>
+              <img className='w-full' src="banner2.png"></img>
           </div>
           <section className='w-full scroll-m-20  mt-6 '>
             <div className='flex justify-center items-center mx-4 md:mx-44'>

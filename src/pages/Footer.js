@@ -19,14 +19,14 @@ export default function Footer() {
                         <Link to="/chinh-sach-doi-tra" className="text-sm mt-1">• Chính sách đổi trả</Link>
                         <p className="text-sm mt-1">• FAQ</p>
                     </div>
-                    <div className="flex flex-col items-center mr-12">
-                        <div className="flex">                    
+                    <div className="flex flex-col items-center md:mr-12 md:mt-0 mt-8">
+                        <div className="md:flex">                    
                             <div class="fb-page" 
                                 data-href="https://www.facebook.com/jpanwell"
                                 data-width="300" 
                                 data-hide-cover="false"
                                 data-show-facepile="false"></div>
-                                <div className="mx-2"></div>
+                                <div className="mx-0 md:mx-2 my-2 md:my-0"></div>
                             <div class="fb-page" 
                                 data-href="https://www.facebook.com/jpanwellvn"
                                 data-width="300" 
@@ -34,7 +34,7 @@ export default function Footer() {
                                 data-show-facepile="false"></div>
                         </div>
 
-                        <button className="mt-4 px-4 py-1 md:py-2 flex items-center my-2  rounded-full border border-gray-500 hover:scale-110 transition">
+                        <button className="hidden md:flex mt-4 px-4 py-1 md:py-2  items-center my-2  rounded-full border border-gray-500 hover:scale-110 transition">
                             <PiPhoneCallThin className="text-2xl"/>
                             <Link to="tel:0983191166" className='my-2 md:my-0 ml-1 text-sm'>Hotline tư vấn: <span className="font-semibold">098 319 1166</span></Link>
                         </button>

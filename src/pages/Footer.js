@@ -14,10 +14,16 @@ export default function Footer() {
                     <div className="mt-4 md:mt-8">
                         <p className="text-sm">Nhập khẩu, phân phối và chịu trách nhiệm về sản phẩm: </p>
                         <p className="font-semibold">Công ty Cổ phần Hiroki</p>
-                        <p className="text-sm">Địa chỉ: Số 58 Kim Mã, P. Kim Mã, Q. Ba Đình, TP. Hà Nội</p>
+                        <p className="text-sm">• Địa chỉ: Số 58 Kim Mã, P. Kim Mã, Q. Ba Đình, TP. Hà Nội</p>
+                        <p className="text-sm">• Số ĐKKD: 0106712582 cấp ngày 12 tháng 12 năm 2014 <br className="hidden md:block"></br>tại Sở Kế Hoạch Và Đầu Tư Thành Phố Hà Nội</p>
+                        <p className="text-sm">• Email: hiroki.jsc@gmail.com</p>
                         <p className="font-semibold mt-4">HỖ TRỢ KHÁCH HÀNG</p>
-                        <Link to="/chinh-sach-doi-tra" className="text-sm mt-1">• Chính sách đổi trả</Link>
-                        <p className="text-sm mt-1">• FAQ</p>
+                        <div className="flex flex-col">
+                            <Link to="/chinh-sach-doi-tra" reloadDocument className="text-sm mt-1">• Chính sách đổi trả</Link>
+                            <Link to="/chinh-sach-giao-hang" reloadDocument className="text-sm mt-1">• Chính sách giao hàng</Link>
+                            <Link to="/chinh-sach-thanh-toan" reloadDocument className="text-sm mt-1">• Chính sách thanh toán</Link>
+                            <Link to="/chinh-sach-thu-thap-va-xu-ly-du-lieu-ca-nhan" reloadDocument className="text-sm mt-1">• Chính sách thu thập và xử lý dữ liệu cá nhân</Link>
+                        </div>
                     </div>
                     <div className="flex flex-col items-center md:mr-12 md:mt-0 mt-8">
                         <div className="md:flex">                    

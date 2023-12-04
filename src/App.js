@@ -11,6 +11,9 @@ import { Products } from './pages/Products';
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
 import { Return } from './pages/Return';
+import { Payment } from './pages/Payment';
+import { DataProtection } from './pages/DataProtection';
+import { Delivery } from './pages/Delivery';
 
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
             <Route path="ve-chung-toi" element={<About />} />
             <Route path="article" element={<Article/>}/>
             <Route path="chinh-sach-doi-tra" element={<Return/>}/>
+            <Route path="chinh-sach-thanh-toan" element={<Payment/>}/>
+            <Route path="chinh-sach-thu-thap-va-xu-ly-du-lieu-ca-nhan" element={<DataProtection/>}/>
+            <Route path="chinh-sach-giao-hang" element={<Delivery/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>

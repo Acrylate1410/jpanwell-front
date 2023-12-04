@@ -22,7 +22,7 @@ const Layout = () => {
       borderColor = "border-white"
     }
     */
-  const mode = "xlmas"
+  const mode = "xmas"
   const outerRef = useRef()
   useEffect(() => {
     const handleClickOutside = (e) => {

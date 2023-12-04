@@ -29,10 +29,6 @@ function App() {
             <Route path="lien-he" element={<Contact />} />
             <Route path="ve-chung-toi" element={<About />} />
             <Route path="article" element={<Article/>}/>
-            <Route path="chinh-sach-doi-tra" element={<Return/>}/>
-            <Route path="chinh-sach-thanh-toan" element={<Payment/>}/>
-            <Route path="chinh-sach-thu-thap-va-xu-ly-du-lieu-ca-nhan" element={<DataProtection/>}/>
-            <Route path="chinh-sach-giao-hang" element={<Delivery/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>
@@ -40,4 +36,10 @@ function App() {
     </BrowserRouter>
   );
 }
+/*
+<Route path="chinh-sach-doi-tra" element={<Return/>}/>
+<Route path="chinh-sach-thanh-toan" element={<Payment/>}/>
+<Route path="chinh-sach-bao-mat" element={<DataProtection/>}/>
+<Route path="chinh-sach-giao-hang" element={<Delivery/>}/>
+*/
 export default App;

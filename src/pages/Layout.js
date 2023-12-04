@@ -16,11 +16,13 @@ import Hamburger from "hamburger-react";
 const Layout = () => {
   let textColor = "text-yellow-950"
   let borderColor = "border-gray-500"
+  /*
     if (window.location.pathname === "/") {
       textColor = "md:text-white"
       borderColor = "border-white"
     }
-  const mode = "xmas"
+    */
+  const mode = "xlmas"
   const outerRef = useRef()
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -77,13 +79,22 @@ const Layout = () => {
       
       return () => window.removeEventListener('scroll', onScroll);
     }, [])
+    //window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 md:bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
+    //{window.location.pathname === "/" && <div className="w-[45%]"></div>}
+    /*
+    {
+              window.location.pathname === "/" &&
+              <div className="h-0 md:h-[450px] flex items-center justify-center">
+                <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
+              </div>
+            }
+    */
     return (
         <div className="App w-full overflow-hidden relative">
             {mode === "xmas" &&<Snowfall/>}
-            <header className={window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 md:bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
-            : 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
+            <header className={'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
             <div className='flex items-center justify-between'>
-              {window.location.pathname === "/" && <div className="w-[45%]"></div>}
+              
               <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>
                 <img alt="JpanWell" src="JpanwellVSKCĐ.png" className='object-contain'></img>
               </Link>
@@ -107,20 +118,13 @@ const Layout = () => {
                 </div>
               </div>
                 <div className={'flex items-center justify-center ml-4 ' + textColor}>
-                  <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl  w-[48px] md:w-auto'/>
+                  <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl w-[48px] md:w-auto'/>
                   <HamburgerComponent/>
                 </div>
               </div>
             </div>
             <VSearchBar/>
-            
             <Nav/>
-            {
-              window.location.pathname === "/" &&
-              <div className="h-0 md:h-[450px] flex items-center justify-center">
-                <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
-              </div>
-            }
           </header>
             <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0]'}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
             <button className={pos + ' fixed bottom-[65px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0] md:hidden'}><FiPhone className="text-xl"/></button>

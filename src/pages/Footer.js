@@ -17,12 +17,12 @@ export default function Footer() {
                         <p className="text-sm">• Địa chỉ: Số 58 Kim Mã, P. Kim Mã, Q. Ba Đình, TP. Hà Nội</p>
                         <p className="text-sm">• Số ĐKKD: 0106712582 cấp ngày 12 tháng 12 năm 2014 <br className="hidden md:block"></br>tại Sở Kế Hoạch Và Đầu Tư Thành Phố Hà Nội</p>
                         <p className="text-sm">• Email: hiroki.jsc@gmail.com</p>
-                        <p className="font-semibold mt-4">HỖ TRỢ KHÁCH HÀNG</p>
-                        <div className="flex flex-col">
-                            <Link to="/chinh-sach-doi-tra" reloadDocument className="text-sm mt-1">• Chính sách đổi trả</Link>
-                            <Link to="/chinh-sach-giao-hang" reloadDocument className="text-sm mt-1">• Chính sách giao hàng</Link>
-                            <Link to="/chinh-sach-thanh-toan" reloadDocument className="text-sm mt-1">• Chính sách thanh toán</Link>
-                            <Link to="/chinh-sach-thu-thap-va-xu-ly-du-lieu-ca-nhan" reloadDocument className="text-sm mt-1">• Chính sách thu thập và xử lý dữ liệu cá nhân</Link>
+                        <p className="font-semibold mt-4 hidden">HỖ TRỢ KHÁCH HÀNG</p>
+                        <div className="hidden flex-col">
+                            <Link to="/chinh-sach-doi-tra" reloadDocument className="text-sm mt-1 w-fit">• Chính sách đổi trả</Link>
+                            <Link to="/chinh-sach-giao-hang" reloadDocument className="text-sm mt-1 w-fit">• Chính sách giao hàng</Link>
+                            <Link to="/chinh-sach-thanh-toan" reloadDocument className="text-sm mt-1 w-fit">• Chính sách thanh toán</Link>
+                            <Link to="/chinh-sach-bao-mat" reloadDocument className="text-sm mt-1 w-fit">• Chính sách bảo mật</Link>
                         </div>
                     </div>
                     <div className="flex flex-col items-center md:mr-12 md:mt-0 mt-8">
@@ -32,7 +32,7 @@ export default function Footer() {
                                 data-width="300" 
                                 data-hide-cover="false"
                                 data-show-facepile="false"></div>
-                                <div className="mx-0 md:mx-2 my-2 md:my-0"></div>
+                            <div className="mx-0 md:mx-2 my-2 md:my-0"></div>
                             <div class="fb-page" 
                                 data-href="https://www.facebook.com/jpanwellvn"
                                 data-width="300" 

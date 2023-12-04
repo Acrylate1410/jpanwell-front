@@ -30,7 +30,8 @@ function ImageEffect() {
 export function Home() {
     return (
         <div className="relative">
-          <div className='md:hidden'>
+          
+          <div className='hidden'>
             <img className='scale-110 mt-3' src="bannerchristmas.png"></img>
             <img className='top-32' src="628.png"/>
           </div>

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom"
 export function Nav() {
     const [isHover, setHover] = useState("hidden")
     let textColor = "text-yellow-950"
+    /*
     if (window.location.pathname === "/") {
       textColor = "text-white"
     }
+    */
     return (
         <nav className={'hidden md:flex justify-center mt-4 shadow-[0_10px_10px_-15px_rgba(0,0,0,0.3)] border-y border-y-white w-[95%] mx-auto ' + textColor}>
         {[{text: "Trang chủ", link: "/"}, 

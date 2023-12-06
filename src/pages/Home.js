@@ -16,8 +16,7 @@ function ImageEffect() {
           disableOnInteraction: false,
         }}
         spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full'>
-              <SwiperSlide>
-              
+              <SwiperSlide>     
                 <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png"></img>
               </SwiperSlide>
               <SwiperSlide className='!flex items-center'>
@@ -31,7 +30,6 @@ function ImageEffect() {
 export function Home() {
     return (
         <div className="relative">
-          
           <div className='hidden'>
             <img className='scale-110 mt-3' src="bannerchristmas.png"></img>
             <img className='top-32' src="628.png"/>

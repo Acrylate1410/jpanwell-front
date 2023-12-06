@@ -8,6 +8,7 @@ import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 export function Product(props) {
     const [isHover, setHover] = useState(false)
     const send = (link) => {
+      /*
         fetch("https://graph.facebook.com/v18.0/me/messages?access_token=EAAKjR99Lb3MBOwLdH9kU22wU1fZBbjoo1ZBrE6fn57i68ZBBHRVuWrPuYS5aLtT07I3N9tvvGD3OW7FxzIKQATwMjtxU9KgnFOoK5hfZBnK9Ym64L8vFRoQFcHqAsHOY54FmUI6LjxxA4PZBVqZABOQJwZBnr9Gkea33hg6ZC1NWSWsitomGCJDrkldH6CEw6FXfW73bAua0eusXczoma4iIbw0ZD", {
           method: "POST",
           body: JSON.stringify({
@@ -22,6 +23,7 @@ export function Product(props) {
             'Content-Type': 'application/json'
           },
         })
+        */
     }
     
     return (

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
 import Footer from "./Footer";
 import { BsBoxSeam } from "react-icons/bs";
@@ -15,7 +15,7 @@ import Hamburger from "hamburger-react";
 
 const Layout = () => {
   let textColor = "text-yellow-950"
-  let borderColor = "border-gray-500"
+  
   /*
     if (window.location.pathname === "/") {
       textColor = "md:text-white"
@@ -23,27 +23,6 @@ const Layout = () => {
     }
     */
   const mode = "xmas"
-  const outerRef = useRef()
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (outerRef.current && !outerRef.current.contains(e.target)) {
-        setQuery("")
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-  const [query, setQuery] = useState("")
-  const [products, setProducts] = useState([])
-  const showSuggestion = (e) => {
-    setQuery(e)
-    fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
-        setProducts(data || [])
-        
-    }).catch(error => {})
-  }
     const [pos, setPos] = useState("right-[-61px]")
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
@@ -95,29 +74,11 @@ const Layout = () => {
             {mode === "xmas" &&<Snowfall/>}
             <header className={'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
             <div className='flex items-center justify-between'>
-              
               <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>
                 <img alt="JpanWell" src="JpanwellVSKCĐ.png" className='object-contain'></img>
               </Link>
-              
               <div className='flex w-[45%] justify-end mr-4 md:mr-12'>
-              <div className='w-1/2 relative hidden md:block'  ref={outerRef}>
-                <div className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></div>
-                <input className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
-                <div className={query === "" ? "hidden" 
-                  : "absolute left-0 right-0 bg-white top-9 border border-gray-300"}>
-                    {products.filter(el => {
-                        if (query === '') {
-                            return true
-                        }
-                        return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
-                      <Link reloadDocument className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} onClick={() => setQuery("")}>
-                        <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
-                        <div className="font-semibold text-yellow-950">{i.name}</div>
-                      </Link>
-                    )}
-                </div>
-              </div>
+              <HSearchBar/>
                 <div className={'flex items-center justify-center ml-4 ' + textColor}>
                   <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl w-[48px] md:w-auto'/>
                   <HamburgerComponent/>
@@ -149,11 +110,58 @@ const Layout = () => {
         </div>
 )};
 
-
+function HSearchBar() {
+  const [query, setQuery] = useState("")
+  const [products, setProducts] = useState([])
+  const outerRef = useRef()
+  let borderColor = "border-gray-500"
+  const navigate = useNavigate();
+  const showSuggestion = (e) => {
+    setQuery(e)
+    fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
+        setProducts(data || [])
+        
+    }).catch(error => {})
+  }
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (outerRef.current && !outerRef.current.contains(e.target)) {
+        setQuery("")
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+  return (
+    <form className='w-1/2 relative hidden md:block'  ref={outerRef} 
+    onSubmit={(e) => {
+      e.preventDefault()
+      query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")}}>
+      <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center' ><CiSearch/></Link>
+      <input className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+      <div className={query === "" ? "hidden" 
+        : "absolute left-0 right-0 bg-white top-9 border border-gray-300"}>
+          {products.filter(el => {
+              if (query === '') {
+                  return true
+              }
+              return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
+            <Link reloadDocument className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} onClick={() => setQuery("")}>
+              <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
+              <div className="font-semibold text-yellow-950">{i.name}</div>
+            </Link>
+          )}
+      </div>
+    </form>
+  )
+}
 function VSearchBar() {
   const outerRef = useRef()
   const [query, setQuery] = useState("")
   const [products, setProducts] = useState([])
+  const navigate = useNavigate();
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (outerRef.current && !outerRef.current.contains(e.target)) {
@@ -169,13 +177,14 @@ function VSearchBar() {
     setQuery(e)
     fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
         setProducts(data || [])
-        
     }).catch(error => {})
   }
   return (
     <>
-            <div className='w-full relative md:hidden mt-4' ref={outerRef}>
-            <div className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></div>
+            <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={(e) => {
+              e.preventDefault()
+              query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")}}>
+            <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
             <input className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
             <div className={query === "" ? "hidden" 
                   : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300"}>
@@ -190,7 +199,7 @@ function VSearchBar() {
                       </Link>
                     )}
                 </div>
-      </div>
+          </form>
       </>
   )
 }

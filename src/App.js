@@ -10,6 +10,7 @@ import { ProductDetails } from './pages/ProductDetails';
 import { Products } from './pages/Products';
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
+import { Search } from './pages/Search'
 import { Return } from './pages/Return';
 import { Payment } from './pages/Payment';
 import { DataProtection } from './pages/DataProtection';
@@ -29,6 +30,7 @@ function App() {
             <Route path="lien-he" element={<Contact />} />
             <Route path="ve-chung-toi" element={<About />} />
             <Route path="article" element={<Article/>}/>
+            <Route path="search" element={<Search/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>

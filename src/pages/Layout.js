@@ -114,14 +114,19 @@ function HSearchBar() {
   const [query, setQuery] = useState("")
   const [products, setProducts] = useState([])
   const outerRef = useRef()
+  const input = useRef()
   let borderColor = "border-gray-500"
   const navigate = useNavigate();
   const showSuggestion = (e) => {
     setQuery(e)
     fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
         setProducts(data || [])
-        
     }).catch(error => {})
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    input.current.value = ''
+    query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")
   }
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -136,11 +141,9 @@ function HSearchBar() {
   }, []);
   return (
     <form className='w-1/2 relative hidden md:block'  ref={outerRef} 
-    onSubmit={(e) => {
-      e.preventDefault()
-      query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")}}>
+    onSubmit={handleSubmit}>
       <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center' ><CiSearch/></Link>
-      <input className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+      <input ref={input} className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
       <div className={query === "" ? "hidden" 
         : "absolute left-0 right-0 bg-white top-9 border border-gray-300"}>
           {products.filter(el => {
@@ -161,6 +164,7 @@ function VSearchBar() {
   const outerRef = useRef()
   const [query, setQuery] = useState("")
   const [products, setProducts] = useState([])
+  const input = useRef()
   const navigate = useNavigate();
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -179,13 +183,16 @@ function VSearchBar() {
         setProducts(data || [])
     }).catch(error => {})
   }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    input.current.value = ''
+    query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")
+  }
   return (
     <>
-            <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={(e) => {
-              e.preventDefault()
-              query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")}}>
+            <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={handleSubmit}>
             <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
-            <input className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+            <input ref={input} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
             <div className={query === "" ? "hidden" 
                   : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300"}>
                     {products.filter(el => {

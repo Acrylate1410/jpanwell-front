@@ -47,14 +47,12 @@ export function ProductDetails() {
             <div className="md:w-1/3 order-3 md:order-1">
               <SwiperComponent  slide1={product.slide1} slide2={product.slide2}/>
             </div>
-            
             <div className="mx-8 order-2"></div>
-            
             <div className=" md:w-1/3 mt-4 md:mt-8  md:order-3 order-1">
               <p className="text-sm md:mb-2 text-center md:text-start">Thực phẩm bảo vệ sức khỏe</p>
               <p className="text-2xl font-semibold md:border-b border-black w-3/5 pb-2 text-center md:text-start mx-auto md:mx-0">{product.name}</p>
               <div className="mt-4 hidden md:block">
-              {product.function && product.function.map(i =>
+                {product.function && product.function.map(i =>
                         <div className="flex items-start mb-2">
                           <div className="w-[3%]"><GiCheckMark className="text-sm mt-2"/></div>
                           <span className="ml-2">{i}</span>

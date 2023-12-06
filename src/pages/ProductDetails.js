@@ -59,7 +59,7 @@ export function ProductDetails() {
                         </div>
                         )
                 }
-                <Link to="m.me/1436968196580581" onClick={() => send(product.link)} className='w-fit mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] text-yellow-900 font-semibold transition hover:text-white mb-4 rounded-lg flex items-center justify-center'>
+                <Link to="https://m.me/1436968196580581" onClick={() => send(product.link)} className='w-fit mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] text-yellow-900 font-semibold transition hover:text-white mb-4 rounded-lg flex items-center justify-center'>
                   <PiShoppingCartSimpleThin className="text-lg"/>
                   <div className="mx-1"></div>
                   <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>

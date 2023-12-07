@@ -151,10 +151,10 @@ function HSearchBar() {
                   return true
               }
               return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
-            <button className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {window.location.href = "/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-"); setQuery("")}}>
+            <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => setQuery("")}>
               <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
               <div className="font-semibold text-yellow-950">{i.name}</div>
-            </button>
+            </Link>
           )}
       </div>
     </form>
@@ -200,10 +200,10 @@ function VSearchBar() {
                             return true
                         }
                         return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
-                      <button className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {window.location.href = "/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-"); setQuery("")}}>
+                      <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {setQuery("")}}>
                         <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
                         <div className="font-semibold text-yellow-950">{i.name}</div>
-                      </button>
+                      </Link>
                     )}
                 </div>
           </form>

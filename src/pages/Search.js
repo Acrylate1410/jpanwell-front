@@ -10,7 +10,7 @@ export function Search() {
       }).catch(error => {})
     }, []);
     return (
-        <div className="w-1/2 mx-auto">
+        <div className="w-[90%] md:w-1/2 mx-auto">
             <h1 className="mt-4 text-lg font-semibold">{"Tìm thấy " + results.length + " kết quả"}</h1>
             {results.map(i =>
                 <>

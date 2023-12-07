@@ -48,16 +48,16 @@ export function ProductDetails() {
               <SwiperComponent  slide1={product.slide1} slide2={product.slide2}/>
             </div>
             <div className="mx-8 order-2"></div>
-            <div className=" md:w-1/3 mt-4 md:mt-8  md:order-3 order-1">
+            <div className="md:w-1/3 mt-4 md:mt-8 md:order-3 order-1">
               <p className="text-sm md:mb-2 text-center md:text-start">Thực phẩm bảo vệ sức khỏe</p>
               <p className="text-2xl font-semibold md:border-b border-black w-3/5 pb-2 text-center md:text-start mx-auto md:mx-0">{product.name}</p>
               <div className="mt-4 hidden md:block">
                 {product.function && product.function.map(i =>
-                        <div className="flex items-start mb-2">
-                          <div className="w-[3%]"><GiCheckMark className="text-sm mt-2"/></div>
-                          <span className="ml-2">{i}</span>
-                        </div>
-                        )
+                    <div className="flex items-start mb-2">
+                      <div className="w-[3%]"><GiCheckMark className="text-sm mt-2"/></div>
+                      <span className="ml-2">{i}</span>
+                    </div>
+                  )
                 }
                 <Link to="https://m.me/1436968196580581" onClick={() => send(product.link)} className='w-fit mt-6 py-2 px-2 md:px-4 bg-[#d9cbb0] text-yellow-900 font-semibold transition hover:text-white mb-4 rounded-lg flex items-center justify-center'>
                   <PiShoppingCartSimpleThin className="text-lg"/>
@@ -105,9 +105,7 @@ export function ProductDetails() {
                   <p><span className="font-semibold">Bảo quản: </span><span>{product.preserve}</span></p>
                   <p><span className="font-semibold">Thông tin cảnh báo:</span></p>
                   {product.warnings && product.warnings.map(i =>
-                    <>
-                      <p>{"- " + i}</p>
-                    </>  
+                    <p>{"- " + i}</p> 
                   )}
                   
             </div>
@@ -116,7 +114,7 @@ export function ProductDetails() {
             </div>
             <div className="text-[15px] mt-2">
                   <p><span className="font-semibold">Trọng lượng: </span><span>{product.mass}</span></p>
-                  <p><span className="font-semibold">Ngày sản xuất: : </span><span>{product.productionDate}</span></p>
+                  <p><span className="font-semibold">Ngày sản xuất: </span><span>{product.productionDate}</span></p>
                   <p><span className="font-semibold">Hạn sử dụng: </span><span>{product.expirationDate}</span></p>
                   <p><span className="font-semibold">Nhà sản xuất: </span><span>{product.factory}</span></p>
                   <p><span className="font-semibold">Địa chỉ: </span><span>{product.address}</span></p>
@@ -128,55 +126,39 @@ export function ProductDetails() {
 
   function SwiperComponent(props) {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
-  return (
-    <>
-      <Swiper
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
-        spaceBetween={10}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 w-full aspect-square  shadow-[0_15px_15px_-15px_rgba(0,0,0,0.3)] border border-gray-300 !hidden md:!block"
-      >
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide1} className="h-[75%]"/>
-        </SwiperSlide>
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide2}  className="h-[75%]"/>
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper shadow-[0_15px_15px_-15px_rgba(0,0,0,0.3)] w-full aspect-[4/1]  !hidden md:!block"
-      >
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide1} className="h-[75%]"/>
-        </SwiperSlide>
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide2} className="h-[75%]"/>
-        </SwiperSlide>
-      </Swiper>
-
-
-
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper  w-full aspect-square  shadow-[0_10px_10px_-10px_rgba(0,0,0,0.3)] md:!hidden">
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide1} className="h-[75%]"/>
-        </SwiperSlide>
-        <SwiperSlide className="w-full !flex items-center justify-center h-full">
-          <img src={"slides2/" + props.slide2} className="h-[75%]"/>
-        </SwiperSlide>
-      </Swiper>
-    </>
-  )
+    return (
+      <>
+        <Swiper
+          style={{'--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff',}}
+          spaceBetween={10} navigation={true} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper2 w-full aspect-square  shadow-[0_15px_15px_-15px_rgba(0,0,0,0.3)] border border-gray-300 !hidden md:!block">
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide1} className="h-[75%]"/>
+          </SwiperSlide>
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide2}  className="h-[75%]"/>
+          </SwiperSlide>
+        </Swiper>
+        <Swiper
+          onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={4} freeMode={true} watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper shadow-[0_15px_15px_-15px_rgba(0,0,0,0.3)] w-full aspect-[4/1] !hidden md:!block">
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide1} className="h-[75%]"/>
+          </SwiperSlide>
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide2} className="h-[75%]"/>
+          </SwiperSlide>
+        </Swiper>
+        <Swiper pagination={true} modules={[Pagination]} className="mySwiper  w-full aspect-square  shadow-[0_10px_10px_-10px_rgba(0,0,0,0.3)] md:!hidden">
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide1} className="h-[75%]"/>
+          </SwiperSlide>
+          <SwiperSlide className="w-full !flex items-center justify-center h-full">
+            <img src={"slides2/" + props.slide2} className="h-[75%]"/>
+          </SwiperSlide>
+        </Swiper>
+      </>
+    )
 }
   

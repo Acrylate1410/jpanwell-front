@@ -7,9 +7,7 @@ import 'swiper/css/pagination';
 import {  Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Product } from './Product';
 function ImageEffect() {
-  const [isHover, setHover] = useState(false)
   return (
-
     <Swiper 
         slidesPerView={1} autoplay={{
           delay: 5000,
@@ -56,7 +54,7 @@ export function Home() {
                   <div className='h-1 flex-1 border-b border-yellow-950'></div>
               </div>
               <ArticleSwiper/>
-              <Link to="/tin-tuc" className='block w-fit mx-auto'>
+              <Link to="/tin-tuc" reloadDocument className='block w-fit mx-auto'>
                 <button className='mt-4 mb-12 text-sm w-36 h-9 rounded-full flex items-center justify-center border border-gray-500 hover:scale-105 transition '>
                         Xem thêm tin tức   
                 </button>

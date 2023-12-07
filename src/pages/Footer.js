@@ -26,7 +26,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="flex flex-col items-center md:mr-12 md:mt-0 mt-8">
-                        <div className="md:flex">                    
+                        <div className="md:flex">                   
                             <div class="fb-page" 
                                 data-href="https://www.facebook.com/jpanwell"
                                 data-width="300" 

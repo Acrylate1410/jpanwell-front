@@ -38,10 +38,10 @@ export function Home() {
           </div>
           <section className='w-full scroll-m-20  mt-6 '>
             <div className='flex justify-center items-center mx-4 md:mx-44'>
-                    <div className='h-1 flex-1 border-b border-yellow-950'></div>
-                    <h2 className='font-semibold text-xl md:text-3xl text-center my-8 mx-4  text-yellow-950'>Sản phẩm yêu thích</h2>
-                    <div className='h-1 flex-1 border-b border-yellow-950'></div>
-                </div>
+              <div className='h-1 flex-1 border-b border-yellow-950'></div>
+              <h2 className='font-semibold text-xl md:text-3xl text-center my-8 mx-4 text-yellow-950'>Sản phẩm yêu thích</h2>
+              <div className='h-1 flex-1 border-b border-yellow-950'></div>
+            </div>
             <div className='md:flex md:justify-between md:items-center mx-8 flex-wrap'>
               <ProductTN/>
               <ProductSwiper/>
@@ -67,9 +67,7 @@ export function Home() {
 function ProductTN() {
     const [img, setImg] = useState("2G9A8251.jpg")
     return(
-      <div className='md:w-1/3 aspect-square'>
-        <img src={img} className='w-full h-full' onMouseEnter={() => setImg("z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg")} onMouseLeave={() => setImg("2G9A8251.jpg")}></img>
-      </div>
+        <img src={img} className='md:w-1/3 aspect-square' onMouseEnter={() => setImg("z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg")} onMouseLeave={() => setImg("2G9A8251.jpg")}></img>
     )
 }
 
@@ -107,7 +105,7 @@ function ArticleSwiper() {
       }).catch(error => {})
     }, []);
     return (
-      <Swiper 
+      <Swiper
           breakpoints={{
             0: {
               slidesPerView: 1,

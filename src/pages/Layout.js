@@ -73,21 +73,21 @@ const Layout = () => {
         <div className="App w-full overflow-hidden relative">
             {mode === "xmas" &&<Snowfall/>}
             <header className={'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
-            <div className='flex items-center justify-between'>
-              <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>
-                <img alt="JpanWell" src="JpanwellVSKCĐ.png" className='object-contain'></img>
-              </Link>
-              <div className='flex w-[45%] justify-end mr-4 md:mr-12'>
-              <HSearchBar/>
-                <div className={'flex items-center justify-center ml-4 ' + textColor}>
-                  <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl w-[48px] md:w-auto'/>
-                  <HamburgerComponent/>
+              <div className='flex items-center justify-between'>
+                <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>
+                  <img alt="JpanWell" src="JpanwellVSKCĐ.png" className='object-contain'></img>
+                </Link>
+                <div className='flex w-[45%] justify-end mr-4 md:mr-12'>
+                  <HSearchBar/>
+                  <div className={'flex items-center justify-center ml-4 ' + textColor}>
+                    <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl w-[48px] md:w-auto'/>
+                    <HamburgerComponent/>
+                  </div>
                 </div>
               </div>
-            </div>
-            <VSearchBar/>
-            <Nav/>
-          </header>
+              <VSearchBar/>
+              <Nav/>
+            </header>
             <button className={pos + ' fixed bottom-[20px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0]'}  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><SlArrowUp className="text-xl"/></button>
             <button className={pos + ' fixed bottom-[65px] text-[44px] z-[100] transition-[right] text-gray-500 border border-gray-500 rounded-full p-2 hover:text-white bg-white hover:bg-[#d9cbb0] hover:border-[#d9cbb0] md:hidden'}><FiPhone className="text-xl"/></button>
             <Outlet />
@@ -104,7 +104,7 @@ const Layout = () => {
                   <div className="h-10"><PiCertificateFill className='text-4xl'/></div>
                   <p className="text-xs md:text-sm mt-2">Đảm bảo nguồn gốc, chất lượng sản phẩm <br className="hidden md:block"></br> và nguyên liệu đầu vào</p>
                 </div>
-          </section>
+            </section>
             <Footer/>
             <ChatBot/>
         </div>
@@ -189,16 +189,15 @@ function VSearchBar() {
     query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")
   }
   return (
-    <>
             <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={handleSubmit}>
-            <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
-            <input ref={input} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
-            <div className={query === "" ? "hidden" 
-                  : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
-                    {products.filter(el => {
-                        if (query === '') {
-                            return false
-                        }
+                <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
+                <input ref={input} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+                <div className={query === "" ? "hidden" 
+                    : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
+                        {products.filter(el => {
+                          if (query === '') {
+                              return false
+                          }
                         return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
                       <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {setQuery("")}}>
                         <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
@@ -206,8 +205,7 @@ function VSearchBar() {
                       </Link>
                     )}
                 </div>
-          </form>
-      </>
+            </form>
   )
 }
 const ChatBot = () => {

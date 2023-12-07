@@ -148,7 +148,7 @@ function HSearchBar() {
         : "absolute left-0 right-0 bg-white top-9 border border-gray-300 z-[10000]"}>
           {products.filter(el => {
               if (query === '') {
-                  return true
+                  return false
               }
               return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
             <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => setQuery("")}>
@@ -197,7 +197,7 @@ function VSearchBar() {
                   : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
                     {products.filter(el => {
                         if (query === '') {
-                            return true
+                            return false
                         }
                         return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
                       <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {setQuery("")}}>

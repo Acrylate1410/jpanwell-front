@@ -11,11 +11,8 @@ import { PiCertificateFill, PiPhoneCallThin } from "react-icons/pi";
 import { FiPhone } from "react-icons/fi";
 import Snowfall from 'react-snowfall'
 import Hamburger from "hamburger-react";
-
-
 const Layout = () => {
   let textColor = "text-yellow-950"
-  
   /*
     if (window.location.pathname === "/") {
       textColor = "md:text-white"

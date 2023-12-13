@@ -44,10 +44,10 @@ export function Contact() {
                         <FaPhoneVolume className="text-xl"/>
                     </Link> 
                     <Link to="https://www.facebook.com/jpanwellvn" className="mx-2 h-9 aspect-square flex justify-center items-center my-2  rounded-full border border-gray-500 hover:scale-125 hover:bg-[#093489] hover:text-white hover:border-white transition ">
-                            <FaFacebookF className="text-xl"/>
+                        <FaFacebookF className="text-xl"/>
                     </Link>
-                    <Link to="#" className="h-9 aspect-square flex justify-center items-center my-2  rounded-full border border-gray-500 hover:scale-125 hover:bg-[#093489] hover:text-white hover:border-white transition ">
-                            <BiLogoMessenger className="text-2xl"/>
+                    <Link to="https://m.me/1436968196580581" className="h-9 aspect-square flex justify-center items-center my-2  rounded-full border border-gray-500 hover:scale-125 hover:bg-[#093489] hover:text-white hover:border-white transition ">
+                        <BiLogoMessenger className="text-2xl"/>
                     </Link>
                 </div>
             </div>

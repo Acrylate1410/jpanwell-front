@@ -65,9 +65,8 @@ export function Home() {
   };
 
 function ProductTN() {
-    const [img, setImg] = useState("2G9A8251.jpg")
     return(
-        <img src={img} className='md:w-1/3 aspect-square' onMouseEnter={() => setImg("z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg")} onMouseLeave={() => setImg("2G9A8251.jpg")}></img>
+        <img src="2G9A8251.jpg" className='md:w-1/3 aspect-square' onMouseEnter={(e) => e.currentTarget.src = "z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg"} onMouseLeave={(e) => e.currentTarget.src = "2G9A8251.jpg"}></img>
     )
 }
 

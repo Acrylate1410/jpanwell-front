@@ -33,7 +33,7 @@ export function Home() {
             <img className='top-32' src="628.png"/>
           </div>
           <ImageEffect/>
-          <div className='mt-8 md:mt-12 overflow-y-hidden'>
+          <div className='mt-8 md:mt-12 h-[150px] md:h-[480px]'>
               <img className='w-full' src="banner2.png"></img>
           </div>
           <section className='w-full scroll-m-20  mt-6 '>

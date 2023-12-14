@@ -13,12 +13,12 @@ function ImageEffect() {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full'>
+        spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full !h-[200px] md:!h-[520px]'>
               <SwiperSlide>     
                 <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png"></img>
               </SwiperSlide>
               <SwiperSlide className='!flex items-center'>
-              <img className='w-full md:scale-100 scale-105  ' src="nmn.png" loading="lazy"></img>
+              <img className='w-full md:scale-100 scale-105  ' src="nmn.png"></img>
               </SwiperSlide>
       </Swiper>
       
@@ -34,7 +34,7 @@ export function Home() {
           </div>
           <ImageEffect/>
           <div className='mt-8 md:mt-12 overflow-y-hidden'>
-              <img className='w-full' src="banner2.png" loading="lazy"></img>
+              <img className='w-full' src="banner2.png"></img>
           </div>
           <section className='w-full scroll-m-20  mt-6 '>
             <div className='flex justify-center items-center mx-4 md:mx-44'>

@@ -52,13 +52,12 @@ const Layout = () => {
       window.history.scrollRestoration = 'manual'
       window.removeEventListener('scroll', onScroll);
       window.addEventListener('scroll', onScroll, { passive: true })
-      
       return () => window.removeEventListener('scroll', onScroll);
     }, [])
     //window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 md:bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
     //{window.location.pathname === "/" && <div className="w-[45%]"></div>}
     /*
-    {
+            {
               window.location.pathname === "/" &&
               <div className="h-0 md:h-[450px] flex items-center justify-center">
                 <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
@@ -137,22 +136,21 @@ function HSearchBar() {
     };
   }, []);
   return (
-    <form className='w-1/2 relative hidden md:block'  ref={outerRef} 
-    onSubmit={handleSubmit}>
+    <form className='w-1/2 relative hidden md:block'  ref={outerRef} onSubmit={handleSubmit}>
       <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center' ><CiSearch/></Link>
       <input ref={input} className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
-      <div className={query === "" ? "hidden" 
-        : "absolute left-0 right-0 bg-white top-9 border border-gray-300 z-[10000]"}>
+      <div className={query === "" ? "hidden" : "absolute left-0 right-0 bg-white top-9 border border-gray-300 z-[10000]"}>
           {products.filter(el => {
               if (query === '') {
                   return false
               }
               return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
-            <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => setQuery("")}>
-              <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
-              <div className="font-semibold text-yellow-950">{i.name}</div>
-            </Link>
-          )}
+                <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => setQuery("")}>
+                  <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
+                  <div className="font-semibold text-yellow-950">{i.name}</div>
+                </Link>
+              )
+          }
       </div>
     </form>
   )
@@ -186,23 +184,23 @@ function VSearchBar() {
     query !== "" ? window.location.href = "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : navigate("#")
   }
   return (
-            <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={handleSubmit}>
-                <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
-                <input ref={input} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
-                <div className={query === "" ? "hidden" 
-                    : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
-                        {products.filter(el => {
-                          if (query === '') {
-                              return false
-                          }
-                        return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
-                      <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {setQuery("")}}>
-                        <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
-                        <div className="font-semibold text-yellow-950">{i.name}</div>
-                      </Link>
-                    )}
-                </div>
-            </form>
+      <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={handleSubmit}>
+          <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
+          <input ref={input} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)}></input>
+          <div className={query === "" ? "hidden" : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
+              {products.filter(el => {
+                  if (query === '') {
+                      return false
+                  }
+                  return el.name.toLowerCase().startsWith(query.toLowerCase())}).map(i => 
+                    <Link reloadDocument to={"/san-pham?id=" + i.name.toLowerCase().replaceAll(" ", "-")} className="flex items-center h-16 border-b border-b-gray-300 pl-2 py-1" onClick={() => {setQuery("")}}>
+                      <div className="h-full aspect-square flex justify-center items-center"><img src={"/thumbnails/" + i.thumbnail} className="h-4/5 mx-auto"></img></div>
+                      <div className="font-semibold text-yellow-950">{i.name}</div>
+                    </Link>
+                  )
+              }
+          </div>
+      </form>
   )
 }
 const ChatBot = () => {

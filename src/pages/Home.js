@@ -14,11 +14,11 @@ function ImageEffect() {
           disableOnInteraction: false,
         }}
         spaceBetween={30} pagination={{clickable: true,}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full !h-[200px] md:!h-[520px]'>
-              <SwiperSlide>     
+              <SwiperSlide className='!flex items-center'>     
                 <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png"></img>
               </SwiperSlide>
               <SwiperSlide className='!flex items-center'>
-              <img className='w-full md:scale-100 scale-105  ' src="nmn.png"></img>
+                <img className='w-full md:scale-100 scale-105  ' src="nmn.png"></img>
               </SwiperSlide>
       </Swiper>
       

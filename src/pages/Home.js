@@ -10,7 +10,7 @@ function ImageEffect() {
   return (
     <Swiper 
         slidesPerView={1} autoplay={{delay: 5000, disableOnInteraction: false}}
-        spaceBetween={30} pagination={{clickable: true}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full !h-[200px] md:!h-[520px]'>
+        spaceBetween={30} pagination={{clickable: true}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full'>
               <SwiperSlide className='!flex items-center'>     
                 <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png" alt="Sức khỏe và sắc đẹp"></img>
               </SwiperSlide>

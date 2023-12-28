@@ -19,7 +19,6 @@ const Layout = () => {
       borderColor = "border-white"
     }
     */
-  const mode = "notxmas"
     const [pos, setPos] = useState("right-[-61px]")
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
@@ -67,7 +66,7 @@ const Layout = () => {
 
     return (
         <div className="App w-full overflow-hidden relative">
-            {mode === "xmas" &&<Snowfall/>}
+            {/*<Snowfall/>*/}
             <header className={'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30'}>
               <div className='flex items-center justify-between'>
                 <Link reloadDocument to="/" className='flex h-12 md:h-16 cursor-pointer ml-4 md:ml-12'>

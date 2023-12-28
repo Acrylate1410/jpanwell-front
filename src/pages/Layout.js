@@ -19,7 +19,7 @@ const Layout = () => {
       borderColor = "border-white"
     }
     */
-  const mode = "xmas"
+  const mode = "notxmas"
     const [pos, setPos] = useState("right-[-61px]")
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)

@@ -56,8 +56,7 @@ export function Products() {
               <div className="md:mr-4">
                 <div className='flex items-center justify-end'>
                   <label for="orders" className='text-sm font-semibold text-yellow-950'>Sắp xếp theo</label>
-                  <div className='mx-1'></div>
-                  
+                  <div className='mx-1'></div>         
                   <select onChange={(e) => {changeOrder(e.target.value)}} name="orders" id="orders" className='border py-1 border-gray-500 text-xs flex justify-between items-center outline-0 px-1'>
                     <option>Tên sản phẩm từ A-Z</option>
                     <option>Tên sản phẩm từ Z-A</option>

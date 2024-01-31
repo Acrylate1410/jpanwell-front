@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
 import Footer from "./Footer";
-import { BsBoxSeam } from "react-icons/bs";
+import { BsBoxSeamFill } from "react-icons/bs";
 import { FaShippingFast } from "react-icons/fa";
 import { SlArrowUp } from "react-icons/sl";
 import { Nav } from "./Nav";
@@ -88,7 +88,7 @@ const Layout = () => {
             <Outlet />
             <section className='flex justify-center items-start bg-[#d9cbb0]'>
                 <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center'>
-                  <div className="h-10"><BsBoxSeam className='text-4xl'/></div>
+                  <div className="h-10"><BsBoxSeamFill className='text-4xl'/></div>
                   <p className="text-xs md:text-sm mt-2">Hàng chính hãng 100%</p>
                 </div>
                 <div className='flex flex-col items-center py-2 text-yellow-900 w-1/4 text-center mx-8'>

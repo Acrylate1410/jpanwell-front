@@ -22,7 +22,7 @@ function ImageEffect() {
   )
 }
 //https://codepen.io/Sector22/pen/KwNpWr
-export function Home() {
+export default function Home() {
     return (
         <div className="relative">
           <div className='hidden'>

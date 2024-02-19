@@ -1,7 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import {Suspense} from 'react';
+import {Suspense, lazy} from 'react';
+/*
 import {Home} from './pages/Home';
 import { News } from './pages/News';
 import { Article } from './pages/Article';
@@ -11,16 +12,21 @@ import { Products } from './pages/Products';
 import { Contact } from './pages/Contact'
 import { About } from './pages/About'
 import { Search } from './pages/Search'
-import { Return } from './pages/Return';
-import { Payment } from './pages/Payment';
-import { DataProtection } from './pages/DataProtection';
-import { Delivery } from './pages/Delivery';
-
+*/
+const Home = lazy(() => import('./pages/Home'));
+const News = lazy(() => import('./pages/News'));
+const Article = lazy(() => import('./pages/Article'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const ProductDetails = lazy(() => import('./pages/ProductDetails'));
+const Products = lazy(() => import('./pages/Products'));
+const Contact = lazy(() => import('./pages/Contact'));
+const About = lazy(() => import('./pages/About'));
+const Search = lazy(() => import('./pages/Search'));
 
 function App() {
   return (
     <BrowserRouter>
-      <Suspense>
+      <Suspense fallback={<></>}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -38,10 +44,4 @@ function App() {
     </BrowserRouter>
   );
 }
-/*
-<Route path="chinh-sach-doi-tra" element={<Return/>}/>
-<Route path="chinh-sach-thanh-toan" element={<Payment/>}/>
-<Route path="chinh-sach-bao-mat" element={<DataProtection/>}/>
-<Route path="chinh-sach-giao-hang" element={<Delivery/>}/>
-*/
 export default App;

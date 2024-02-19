@@ -41,6 +41,5 @@ export function Product(props) {
             <div className="text-xs md:text-sm">Liên hệ để mua hàng</div>
           </Link>
       </Link>
-      // click để gửi link qua messenger
     )
   }

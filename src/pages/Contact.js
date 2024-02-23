@@ -4,7 +4,7 @@ import { FaFacebookF } from "react-icons/fa"
 import { FaPhoneVolume } from "react-icons/fa6";
 import { BiLogoMessenger } from "react-icons/bi";
 import { useRef } from "react";
-export function Contact() {
+export default function Contact() {
     const name = useRef(null)
     const phone = useRef(null)
     const email = useRef(null)

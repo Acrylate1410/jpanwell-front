@@ -2,7 +2,7 @@ import { Product } from './Product';
 import { GoChevronRight, GoChevronDown } from "react-icons/go";
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-export function Products() {
+export default function Products() {
     const [products, setProducts] = useState([])
     const [isHover, setHover] = useState("hidden")
     const [filter, setFilter] = useState("")

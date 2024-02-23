@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Article2 from "./articles/Article2"
 import Article1 from "./articles/Article1"
-export function Article() {
+export default function Article() {
     const [article, setArticle] = useState({})
     const [params] = useSearchParams()
     useEffect(() => {

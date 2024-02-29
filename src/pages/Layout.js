@@ -11,6 +11,7 @@ import { PiCertificateFill, PiPhoneCallThin } from "react-icons/pi";
 import { FiPhone } from "react-icons/fi";
 import Snowfall from 'react-snowfall'
 import Hamburger from "hamburger-react";
+import { IoMenuOutline,IoClose} from "react-icons/io5";
 const Layout = () => {
   let textColor = "text-yellow-950"
   /*
@@ -22,24 +23,28 @@ const Layout = () => {
     const [pos, setPos] = useState("right-[-61px]")
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
-      let status
-      isOpen ? status = "" : status = "hidden"
       return (
-        <>
-          <div className="z-[200] relative md:hidden"><Hamburger toggled={isOpen} toggle={setOpen} size={25}/></div>
-          <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white z-[100] ' + status}>
-            <div className='mt-20'>
-                {[{text: "Trang chủ", link: "/"}, 
-                  {text: "Về JpanWell", link: "/ve-chung-toi"},
-                  {text: "Sản phẩm", link: "/danh-muc-san-pham"},
-                  {text: "Tin tức", link: "/tin-tuc"},
-                  {text: "Liên hệ", link: "/lien-he"}].map(i => 
-                    <Link reloadDocument to={i.link} key={i.text}>
-                        <div className='cursor-pointer text-yellow-950 border-b border-gray-300 pl-6 py-3 text-[#093489] font-medium ' onClick={() => {setOpen(false)}}>{i.text}</div>
-                    </Link>
-                )}
+        <>       
+          <div className="z-[200] relative md:hidden text-4xl z-0" onClick={() => setOpen(true)}><IoMenuOutline/></div>
+          {isOpen && 
+            <div className="md:hidden">
+              <div className="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-60 z-10"></div>
+              <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white z-[100] '}>
+                <div className="text-4xl ml-auto flex justify-end mt-6 mr-6" onClick={() => setOpen(false)}><IoClose/></div>
+                <div className='mt-20'>
+                    {[{text: "Trang chủ", link: "/"}, 
+                      {text: "Về JpanWell", link: "/ve-chung-toi"},
+                      {text: "Sản phẩm", link: "/danh-muc-san-pham"},
+                      {text: "Tin tức", link: "/tin-tuc"},
+                      {text: "Liên hệ", link: "/lien-he"}].map(i => 
+                        <Link reloadDocument to={i.link} key={i.text}>
+                            <div className='cursor-pointer text-yellow-950 border-b border-gray-300 pl-6 py-3 text-[#093489] font-medium ' onClick={() => {setOpen(false)}}>{i.text}</div>
+                        </Link>
+                    )}
+                </div>
+              </div>
             </div>
-          </div>
+          }
         </>
       )
     }

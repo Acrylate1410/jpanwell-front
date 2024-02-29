@@ -25,10 +25,12 @@ function ImageEffect() {
 export default function Home() {
     return (
         <div className="relative">
+          {/*
           <div className='hidden'>
             <img className='scale-110 mt-3' src="bannerchristmas.png"></img>
             <img className='top-32' src="628.png"/>
           </div>
+         */}
           <ImageEffect/>
           <div className='mt-8 md:mt-12'>
               <img className='w-full' src="banner2.png" alt="Dr. Liver - nước uống thải độc gan"></img>

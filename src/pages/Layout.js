@@ -25,7 +25,7 @@ const Layout = () => {
       const [isOpen, setOpen] = useState(false)
       return (
         <>       
-          <div className="z-[200] relative md:hidden text-4xl z-0" onClick={() => setOpen(true)}><IoMenuOutline/></div>
+          <div className="z-0 relative md:hidden text-4xl" onClick={() => setOpen(true)}><IoMenuOutline/></div>
           {isOpen && 
             <div className="md:hidden">
               <div className="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-60 z-10"></div>
@@ -61,12 +61,12 @@ const Layout = () => {
     //window.location.pathname === "/" ? 'header pt-4 pb-1 md:pb-0 md:pt-4 bg-white top-0 right-0 left-0 z-30 md:bg-[url(/public/bannerchristmas1.png)] bg-[length:100%_100%] bg-bottom'
     //{window.location.pathname === "/" && <div className="w-[45%]"></div>}
     /*
-            {
-              window.location.pathname === "/" &&
-              <div className="h-0 md:h-[450px] flex items-center justify-center">
-                <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
-              </div>
-            }
+      {
+        window.location.pathname === "/" &&
+        <div className="h-0 md:h-[450px] flex items-center justify-center">
+          <img src="wish.png" className="hidden md:block w-1/2 mb-28"></img>
+        </div>
+      }
     */
 
     return (

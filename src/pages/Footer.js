@@ -1,4 +1,3 @@
-import { BiPhone } from "react-icons/bi";
 import { PiPhoneCallThin } from "react-icons/pi";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";

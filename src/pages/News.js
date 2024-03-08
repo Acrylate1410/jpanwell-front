@@ -10,8 +10,14 @@ export default function News() {
     return (
       <>
         <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Tin tức</span></div>
-        <div className="mt-8">
-            {articleList.map(i =>
+        <div className="mt-8 mb-6">
+            {articleList.length === 0 ?
+              <div className='mx-auto flex items-center justify-center'>
+                <div className='h-8 w-8 border border-y-black border-l-black rounded-full animate-spin'></div>
+                <div className='mx-2'></div>
+                <div>Đang tải tin tức</div>
+              </div>
+            : articleList.map(i =>
               <Link to={i.link ? i.link : "/article?id=" + i._id} className="flex flex-col justify-center items-center md:items-start md:flex-row mb-12 md:mx-32">
                   <div className="w-[90vw] md:w-1/3 h-48 md:mr-8"><img alt={i.title} src={i.thumbnail} className="w-full h-full object-cover"></img></div>
                   <div className="w-[90vw] mt-3 md:mt-0 md:w-3/5">

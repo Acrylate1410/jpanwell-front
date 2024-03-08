@@ -148,8 +148,6 @@ export default function ProductDetails() {
             <img src={"slides2/" + props.slide2} className="h-[75%]"/>
           </SwiperSlide>
         </Swiper>
-
-
         <Swiper pagination={true} modules={[Pagination]} className="mySwiper  w-full aspect-square  shadow-[0_10px_10px_-10px_rgba(0,0,0,0.3)] md:!hidden">
           <SwiperSlide className="w-full !flex items-center justify-center h-full">
             <img src={"slides2/" + props.slide1} className="h-[75%]"/>

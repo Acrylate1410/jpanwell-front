@@ -62,8 +62,15 @@ export default function Products() {
                   </select>
                 </div>
               </div>
-              <div className='flex justify-between flex-wrap w-full mt-4 mb-6'>                
-                  {products.filter(el => {
+              <div className='flex justify-between flex-wrap w-full mt-4 mb-6'>
+                  {products.length === 0 ?
+                    <div className='mx-auto flex items-center'>
+                      <div className='h-8 w-8 border border-y-black border-l-black rounded-full animate-spin'></div>
+                      <div className='mx-2'></div>
+                      <div>Đang tải sản phẩm</div>
+                    </div>
+                  :                
+                  products.filter(el => {
                     if (filter === '') {
                       return true
                     } else if (filter === 'Yêu thích') {

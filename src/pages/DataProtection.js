@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 export function DataProtection() {
     return (
         <>
+        {/*
             <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className="font-semibold">Chính sách bảo mật</span></div>
                 <div className="mt-8 text-justify mx-8 md:w-1/2 md:mx-auto mb-12">
                     <p className="font-bold text-2xl text-center">Chính sách bảo mật</p>
@@ -56,6 +57,7 @@ export function DataProtection() {
                     <p className="mt-4 font-semibold">8. Cơ chế tiếp nhận và giải quyết khiếu nại liên quan đến việc thông tin của khách hàng</p>
                     <p>Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, khách hàng gửi email khiếu nại đến email hiroki.jsc@gmail.com hoặc gọi điện thoại tới số 098 319 1166 để khiếu nại và cung cấp chứng cứ liên quan tới vụ việc cho Ban quản trị. Ban quản trị cam kết sẽ phản hồi ngay lập tức hoặc muộn nhất là trong vòng 24 giờ làm việc kể từ thời điểm nhận được khiếu nại.</p>
                 </div>
+        */}
         </>
     )
 }

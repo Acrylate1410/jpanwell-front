@@ -33,7 +33,7 @@ export default function Home() {
          */}
           <ImageEffect/>
           <div className='mt-8 md:mt-12'>
-              <img className='w-full' src="banner2.png" alt="Dr. Liver - nước uống thải độc gan"></img>
+              <img loading="lazy" className='w-full' src="banner2.png" alt="Dr. Liver - nước uống thải độc gan"></img>
           </div>
           <section className='w-full scroll-m-20  mt-6 '>
             <div className='flex justify-center items-center mx-4 md:mx-44'>
@@ -66,7 +66,7 @@ export default function Home() {
 function ProductTN() {
     return(
       <div className='md:w-1/3 aspect-square'>
-        <img src="2G9A8251.jpg" className='w-full h-full' alt="Sản phẩm yêu thích" onMouseEnter={(e) => e.currentTarget.src = "z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg"} onMouseLeave={(e) => e.currentTarget.src = "2G9A8251.jpg"}></img>
+        <img loading="lazy" src="2G9A8251.jpg" className='w-full h-full' alt="Sản phẩm yêu thích" onMouseEnter={(e) => e.currentTarget.src = "z4911505159452_0cee79c665cdd670d36a365602ff21d1.jpg"} onMouseLeave={(e) => e.currentTarget.src = "2G9A8251.jpg"}></img>
       </div>
     )
 }

@@ -29,7 +29,7 @@ export function Product(props) {
     return (
       <Link reloadDocument to={props.link} className='w-[45%] md:w-[30%] text-center relative' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
           <div className='w-full h-56 flex justify-center items-center overflow-hidden relative'>
-              <img loading="lazy" src={"thumbnails/" + props.src} className="h-[75%]" alt={props.name}></img>
+              <img src={"thumbnails/" + props.src} className="h-[75%]" alt={props.name}></img>
               {props.isLiked && 
           (!isHover ? <BsSuitHeart className="absolute right-0 md:right-12 top-4 text-gray-800"/> : <BsSuitHeartFill className="absolute right-0 md:right-12 top-4"/>)}
           </div>

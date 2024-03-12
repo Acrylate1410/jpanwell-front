@@ -30,8 +30,10 @@ export function Product(props) {
       <Link reloadDocument to={props.link} className='w-[45%] md:w-[30%] text-center relative' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
           <div className='w-full h-56 flex justify-center items-center overflow-hidden relative'>
               <img src={"thumbnails/" + props.src} className="h-[75%]" alt={props.name}></img>
-              {props.isLiked && 
-          (!isHover ? <BsSuitHeart className="absolute right-0 md:right-12 top-4 text-gray-800"/> : <BsSuitHeartFill className="absolute right-0 md:right-12 top-4"/>)}
+              {props.isLiked && (!isHover ? 
+                <BsSuitHeart className="absolute right-0 md:right-12 top-4 text-gray-800"/> : 
+                <BsSuitHeartFill className="absolute right-0 md:right-12 top-4"/>)
+              }
           </div>
           <div className='font-semibold mt-2 h-9 md:h-6 text-sm md:text-base'>{props.name}<span></span></div>
           <div className="mb-2 md:mt-1 text-xs md:text-sm">Thực phẩm bảo vệ sức khỏe</div>

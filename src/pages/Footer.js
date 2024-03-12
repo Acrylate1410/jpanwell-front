@@ -2,14 +2,6 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 export default function Footer() {
-    /*
-    <div className="hidden flex-col">
-        <Link to="/chinh-sach-doi-tra" reloadDocument className="text-sm mt-1 w-fit">• Chính sách đổi trả</Link>
-        <Link to="/chinh-sach-giao-hang" reloadDocument className="text-sm mt-1 w-fit">• Chính sách giao hàng</Link>
-        <Link to="/chinh-sach-thanh-toan" reloadDocument className="text-sm mt-1 w-fit">• Chính sách thanh toán</Link>
-        <Link to="/chinh-sach-bao-mat" reloadDocument className="text-sm mt-1 w-fit">• Chính sách bảo mật</Link>
-    </div>
-    */
     return (
         <footer className='md:flex pt-6 pb-6 md:pb-12 md:text-start w-full px-6 md:px-12 text-yellow-950'>
             <div className="w-full md:ml-8 ">

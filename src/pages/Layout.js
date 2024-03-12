@@ -13,13 +13,6 @@ import Snowfall from 'react-snowfall'
 import Hamburger from "hamburger-react";
 import { IoMenuOutline,IoClose} from "react-icons/io5";
 const Layout = () => {
-  let textColor = "text-yellow-950"
-  /*
-    if (window.location.pathname === "/") {
-      textColor = "md:text-white"
-      borderColor = "border-white"
-    }
-    */
     const [pos, setPos] = useState("right-[-61px]")
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
@@ -79,7 +72,7 @@ const Layout = () => {
                 </Link>
                 <div className='flex w-[45%] justify-end mr-4 md:mr-12'>
                   <HSearchBar/>
-                  <div className={'flex items-center justify-center ml-4 ' + textColor}>
+                  <div className={'flex items-center justify-center ml-4 text-yellow-950'}>
                     <PiShoppingCartSimpleThin  className='text-3xl md:text-2xl w-[48px] md:w-auto'/>
                     <HamburgerComponent/>
                   </div>
@@ -140,7 +133,7 @@ function HSearchBar() {
     };
   }, []);
   return (
-    <form className='w-1/2 relative hidden md:block'  ref={outerRef} onSubmit={handleSubmit}>
+    <form className='w-1/2 relative hidden md:block' ref={outerRef} onSubmit={handleSubmit}>
       <Link to={query !== "" ? "/search?query=" + query.toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center' ><CiSearch/></Link>
       <input ref={input} className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)} onFocus={(e) => showSuggestion(e.target.value)}></input>
       <div className={query === "" ? "hidden" : "absolute left-0 right-0 bg-white top-9 border border-gray-300 z-[10000]"}>

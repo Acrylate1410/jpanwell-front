@@ -35,7 +35,6 @@ export default function Products() {
           <div className='md:flex mt-4'>
             <div className='md:w-1/5 md:ml-24 md:mb-8'>
               {[{text: "Sức khỏe", link: "suc-khoe"}, {text: "Làm đẹp", link: "lam-dep"}].map(i =>
-                  <>
                     {filter !== i.text ? 
                       <Link reloadDocument to={"/danh-muc-san-pham?type=" + i.link} className='border-b border-gray-500 py-2 pl-6 md:pl-4 pr-4 md:pr-0 flex justify-between items-center cursor-pointer hover:scale-105 hover:font-medium md:mt-0 mt-2'>
                         <div>{i.text}</div>
@@ -47,7 +46,6 @@ export default function Products() {
                           <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </div>
                     }
-                  </>
                 )}
             </div>
             <div className='mx-8 md:w-4/5 mt-4 md:mt-0'>

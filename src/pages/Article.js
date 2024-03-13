@@ -15,7 +15,7 @@ export default function Article() {
                           {title: "CHƯƠNG TRÌNH TỪ THIỆN CÔNG TY CỔ PHẦN HIROKI ỦNG HỘ QUỸ PHÒNG CHỐNG COVID-19", content: <Article1/>}]
     return (
         <>         
-          <div className="md:w-4/5 mx-auto px-[30px] mt-36 font-bold text-2xl">{article.title}</div>
+          <div className="md:w-4/5 mx-auto px-[30px] mt-16 font-bold text-2xl">{article.title}</div>
           {article.date !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
           {searchArticle.map(i =>
             article.title === i.title && <div className="w-4/5 mx-auto px-[30px] text-justify text-sm my-8">{i.content}</div>

@@ -18,7 +18,7 @@ export default function News() {
                 <div>Đang tải tin tức</div>
               </div>
             : articleList.map(i =>
-              <Link to={i.link ? i.link : "/bai-viet?id=" + i._id} className="flex flex-col justify-center items-center md:items-start md:flex-row mb-12 md:mx-32">
+              <Link reloadDocument to={i.link ? i.link : "/bai-viet?id=" + i._id} className="flex flex-col justify-center items-center md:items-start md:flex-row mb-12 md:mx-32">
                   <div className="w-[90vw] md:w-1/3 h-48 md:mr-8"><img alt={i.title} src={i.thumbnail} className="w-full h-full object-cover"></img></div>
                   <div className="w-[90vw] mt-3 md:mt-0 md:w-3/5">
                     <p className="font-bold text-justify uppercase">{i.title}</p>

@@ -36,7 +36,7 @@ function App() {
             <Route path="lien-he" element={<Contact />} />
             <Route path="ve-chung-toi" element={<About />} />
             <Route path="bai-viet" element={<Article/>}/>
-            <Route path="search" element={<Search/>}/>
+            <Route path="tim-kiem" element={<Search/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>

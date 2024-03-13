@@ -114,7 +114,7 @@ function ArticleSwiper() {
           }} spaceBetween={30} navigation={true} modules={[Navigation]} className='!mx-8 articles'>
         {articleList.map(i =>
           <SwiperSlide>
-              <Link to={i.link ? i.link : "/article?id=" + i._id}>
+              <Link to={i.link ? i.link : "/bai-viet?id=" + i._id}>
                 <img className='h-52 w-full object-cover' alt={i.title} src={i.thumbnail}></img>
                 <p className='font-bold mt-4 text-justify uppercase'>{i.title}</p>
                 <p className='mt-4 text-sm text-justify'>{i.description}</p>

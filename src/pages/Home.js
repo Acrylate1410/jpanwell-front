@@ -11,10 +11,10 @@ function ImageEffect() {
     <Swiper slidesPerView={1} autoplay={{delay: 5000, disableOnInteraction: false}}
         spaceBetween={30} pagination={{clickable: true}} modules={[Autoplay, Pagination]} className='md:mt-8 !w-full'>
             <SwiperSlide className='!flex items-center'>     
-              <img loading='lazy' className='w-full md:scale-100 scale-125 mt-8' src="banner.png" alt="Sức khỏe và sắc đẹp"></img>
+              <img className='w-full md:scale-100 scale-125 mt-8' src="banner.png" alt="Sức khỏe và sắc đẹp"></img>
             </SwiperSlide>
             <SwiperSlide className='!flex items-center'>
-              <img loading='lazy' className='w-full md:scale-100 scale-105  ' src="nmn.png" alt="Hoạt chất vàng giúp ngăn ngừa lão hóa tác động từ sâu bên trong tế bào"></img>
+              <img className='w-full md:scale-100 scale-105  ' src="nmn.png" alt="Hoạt chất vàng giúp ngăn ngừa lão hóa tác động từ sâu bên trong tế bào"></img>
             </SwiperSlide>
     </Swiper>
   )

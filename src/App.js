@@ -2,17 +2,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import {Suspense, lazy} from 'react';
-/*
-import {Home} from './pages/Home';
-import { News } from './pages/News';
-import { Article } from './pages/Article';
-import {NotFound} from './pages/NotFound';
-import { ProductDetails } from './pages/ProductDetails';
-import { Products } from './pages/Products';
-import { Contact } from './pages/Contact'
-import { About } from './pages/About'
-import { Search } from './pages/Search'
-*/
 const Home = lazy(() => import('./pages/Home'));
 const News = lazy(() => import('./pages/News'));
 const Article = lazy(() => import('./pages/Article'));

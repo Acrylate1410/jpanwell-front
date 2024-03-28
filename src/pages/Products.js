@@ -31,7 +31,7 @@ export default function Products() {
     }
     return (
         <>
-          <div className='md:mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className='font-semibold'>Danh mục sản phẩm</span></div>
+          <div className='mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className='font-semibold'>Danh mục sản phẩm</span></div>
           <div className='md:flex mt-4'>
             <div className='md:w-1/5 md:ml-24 md:mb-8'>
                     {filter !== "Sức khỏe" ? 

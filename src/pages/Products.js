@@ -34,19 +34,28 @@ export default function Products() {
           <div className='md:mt-8 text-xs ml-8 md:ml-32 text-gray-500'><Link to="/">Trang chủ</Link><span className='mx-1'>|</span><span className='font-semibold'>Danh mục sản phẩm</span></div>
           <div className='md:flex mt-4'>
             <div className='md:w-1/5 md:ml-24 md:mb-8'>
-              {[{text: "Sức khỏe", link: "suc-khoe"}, {text: "Làm đẹp", link: "lam-dep"}].map(i =>
-                    {filter !== i.text ? 
-                      <Link reloadDocument to={"/danh-muc-san-pham?type=" + i.link} className='border-b border-gray-500 py-2 pl-6 md:pl-4 pr-4 md:pr-0 flex justify-between items-center cursor-pointer hover:scale-105 hover:font-medium md:mt-0 mt-2'>
-                        <div>{i.text}</div>
+                    {filter !== "Sức khỏe" ? 
+                      <Link reloadDocument to={"/danh-muc-san-pham?type=" + "suc-khoe"} className='border-b border-gray-500 py-2 pl-6 md:pl-4 pr-4 md:pr-0 flex justify-between items-center cursor-pointer hover:scale-105 hover:font-medium md:mt-0 mt-2'>
+                        <div>{"Sức khỏe"}</div>
                         <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </Link> 
                       :  
-                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0' onClick={() => setFilter(i.text)}>
-                          <div>{i.text}</div>
+                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0' onClick={() => setFilter("Sức khỏe")}>
+                          <div>{"Sức khỏe"}</div>
                           <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </div>
                     }
-                )}
+                    {filter !== "Làm đẹp" ? 
+                      <Link reloadDocument to={"/danh-muc-san-pham?type=" + "lam-dep"} className='border-b border-gray-500 py-2 pl-6 md:pl-4 pr-4 md:pr-0 flex justify-between items-center cursor-pointer hover:scale-105 hover:font-medium md:mt-0 mt-2'>
+                        <div>{"Làm đẹp"}</div>
+                        <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
+                      </Link> 
+                      :  
+                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0' onClick={() => setFilter("Làm đẹp")}>
+                          <div>{"Làm đẹp"}</div>
+                          <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
+                      </div>
+                    }
             </div>
             <div className='mx-8 md:w-4/5 mt-4 md:mt-0'>
               <div className="md:mr-4">

@@ -124,7 +124,7 @@ function HSearchBar() {
   return (
     <form className='w-1/2 relative hidden md:block' ref={outerRef} onSubmit={handleSubmit}>
       <Link to={query.current !== "" ? "/tim-kiem?query=" + query.current.toString().toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center' ><CiSearch/></Link>
-      <input ref={query} className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)} onFocus={(e) => showSuggestion(e.target.value)}></input>
+      <input className={'border py-1 px-3 w-full placeholder:text-sm outline-0 ' + borderColor} placeholder='Nhập từ khóa tìm kiếm' onInput={(e) => showSuggestion(e.target.value)} onFocus={(e) => showSuggestion(e.target.value)}></input>
       <div className={query.current === "" ? "hidden" : "absolute left-0 right-0 bg-white top-9 border border-gray-300 z-[10000]"}>
           {products.filter(el => {
               if (query.current === '') {
@@ -171,7 +171,7 @@ function VSearchBar() {
   return (
       <form className='w-full relative md:hidden mt-4' ref={outerRef} onSubmit={handleSubmit}>
           <Link to={query.current !== "" ? "/tim-kiem?query=" + query.current.toString().toLowerCase().replaceAll(" ", "-") : "#"} className='absolute right-3 top-0 bottom-0 flex items-center'><CiSearch/></Link>
-          <input ref={query} className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onFocus={(e) => showSuggestion(e.target.value)} onInput={(e) => showSuggestion(e.target.value)}></input>
+          <input className='border border-gray-300 bg-transparent py-1 px-3 w-full placeholder:text-sm outline-0' placeholder='Nhập từ khóa tìm kiếm' onFocus={(e) => showSuggestion(e.target.value)} onInput={(e) => showSuggestion(e.target.value)}></input>
           <div className={query.current === "" ? "hidden" : "absolute left-0 right-0 bg-white top-9 border-l border-r border-t border-gray-300 z-[10000]"}>
               {products.filter(el => {
                   if (query.current === '') {

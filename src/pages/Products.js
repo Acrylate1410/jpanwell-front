@@ -40,7 +40,7 @@ export default function Products() {
                         <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </Link> 
                       :  
-                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0' onClick={() => setFilter("Sức khỏe")}>
+                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0'>
                           <div>{"Sức khỏe"}</div>
                           <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </div>
@@ -51,7 +51,7 @@ export default function Products() {
                         <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </Link> 
                       :  
-                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0' onClick={() => setFilter("Làm đẹp")}>
+                      <div className='border-b border-gray-500 py-2 pl-6 md:pl-4 flex justify-between items-center cursor-pointer scale-105 font-medium md:mt-0 mt-2 pr-4 md:pr-0'>
                           <div>{"Làm đẹp"}</div>
                           <GoChevronRight className='text-2xl rotate-90 md:rotate-0'/>
                       </div>

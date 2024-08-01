@@ -16,7 +16,7 @@ export default function ProductDetails() {
   const [params] = useSearchParams()
   const [product, setProduct] = useState({})
   useEffect(() => {
-    fetch("https://jpanwell-api.onrender.com/products/get_one_product/" + params.get("id")).then(res => res.json()).then(data => {
+    fetch("https://okyibhzr7o.genhosting.net/jpanwell/products/get_one_product/" + params.get("id")).then(res => res.json()).then(data => {
       setProduct(data[0] || {})
     }).catch(error => {})
   }, []);

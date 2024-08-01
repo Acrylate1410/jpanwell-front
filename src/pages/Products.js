@@ -13,7 +13,7 @@ export default function Products() {
       } else if (params.get("type") === "lam-dep") {
         setFilter("Làm đẹp")
       }
-      fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
+      fetch("https://okyibhzr7o.genhosting.net/jpanwell/products/get_products").then(res => res.json()).then(data => {
         setProducts(data || [])
       }).catch(error => {})
     }, []);

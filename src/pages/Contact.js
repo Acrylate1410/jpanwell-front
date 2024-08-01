@@ -10,7 +10,7 @@ export default function Contact() {
     const email = useRef(null)
     const message = useRef(null)
     const send = () => {
-        fetch("https://jpanwell-api.onrender.com/messages/save", {
+        fetch("https://okyibhzr7o.genhosting.net/jpanwell/messages/save", {
             method: "POST",
             body: JSON.stringify({
               name: name.current.value,

@@ -101,7 +101,7 @@ function HSearchBar() {
   const navigate = useNavigate();
   const showSuggestion = (e) => {
     query.current = e
-    fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
+    fetch("https://okyibhzr7o.genhosting.net/jpanwell/products/get_products").then(res => res.json()).then(data => {
         setProducts(data || [])
     }).catch(error => {})
   }
@@ -159,7 +159,7 @@ function VSearchBar() {
   }, []);
   const showSuggestion = (e) => {
     query.current = e
-    fetch("https://jpanwell-api.onrender.com/products/get_products").then(res => res.json()).then(data => {
+    fetch("https://okyibhzr7o.genhosting.net/jpanwell/products/get_products").then(res => res.json()).then(data => {
         setProducts(data || [])
     }).catch(error => {})
   }

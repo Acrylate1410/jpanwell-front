@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function News() {
     const [articleList, setArticleList] = useState([])
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/jpanwell/articles/get_articles").then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/jpanwell/articles/get_articles").then(res => res.json()).then(data => {
           setArticleList(data || [])
       })
     }, []);

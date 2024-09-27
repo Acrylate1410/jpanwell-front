@@ -72,7 +72,7 @@ function ProductTN() {
 function ProductSwiper() {
     const [products, setProducts] = useState([])
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/jpanwell/products/get_favorites").then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/jpanwell/products/get_favorites").then(res => res.json()).then(data => {
         setProducts(data || [])
       }).catch(error => {})
     }, []);
@@ -98,7 +98,7 @@ function ProductSwiper() {
 function ArticleSwiper() {
   const [articleList, setArticleList] = useState([])
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/jpanwell/articles/get_articles").then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/jpanwell/articles/get_articles").then(res => res.json()).then(data => {
           setArticleList(data || [])
       }).catch(error => {})
     }, []);

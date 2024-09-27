@@ -7,7 +7,7 @@ export default function Article() {
     const [article, setArticle] = useState({})
     const [params] = useSearchParams()
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/jpanwell/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/jpanwell/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
         setArticle(data || {})
       }).catch(error => {})
     }, []);
